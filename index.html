@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rationalize.io - Make better decisions</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <!-- INDEX PAGE HTML BEGINS -->
+
+    <div class='indexContainer'>
+        <h1 class="display-4 text-center">Rationalize.io</h1>
+        <p class="lead text-center">Make better decisions</p>
+        <hr class="my-4">
+        <a class="btn btn-light btn-block" href="rationalize.html" role="button" >Launch the App</a>
+    </div>
+
+    <!-- INDEX PAGE HTML ENDS -->
+
+    <!-- APP HTML BEGINS -->
+
+    <!-- <div class="modal fade" id="appModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+
+
+    <div class='header'>
+      <h1 class='decisionName text-center display-4'>Rationalize.io</h1>
+    </div>
+
+      <div class='criteria container-fluid'>
+        <hr />
+        <div class='row'>
+          <div class='criteriaInput col-md'>
+            <h3 class='innerHeader'>Define the Criteria</h3>
+            <p class='directions text-justify'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis egestas arcu nec tempus. Maecenas pellentesque nibh non leo rhoncus, ac ultrices dolor pharetra. Phasellus ut tortor nisi. Mauris eget tellus metus. Morbi vulputate orci quis massa ullamcorper, et tincidunt dolor porttitor. Sed tempus ligula a nisl blandit suscipit. Aenean malesuada nisi et neque feugiat viverra. Praesent mauris orci, pellentesque ut ligula nec, fringilla faucibus felis. Fusce sodales vestibulum erat vel fringilla. Pellentesque sodales massa quis bibendum porta. Aliquam pellentesque ligula ac porttitor auctor. Duis consequat lacinia dolor, ac volutpat est placerat id.
+            </p>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Criteria:</span>
+              </div>
+              <input class="form-control newCriteriaInput" placeholder="Criteria Name" aria-label="Criteria Name" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Weight:</span>
+              </div>
+              <input class="form-control newCriteriaWeight" placeholder="Criteria Weight" aria-label="Criteria Weight" aria-describedby="basic-addon1">
+            </div>
+            <button type="button" class='newCriteriaButton btn btn-primary btn-sm btn-block'>Add a New Criteria</button>
+        </div>
+
+    <div class='criteriaOutput col-md'>
+      <h3>Your Chosen Criteria</h3>
+      <ul class='criteriaList'>
+      </ul>
+      <button type="button" class='saveAllCriteriaButton btn btn-success btn-block my-3'>Save All Criteria</button>
+
+    </div>
+  </div>
+  <hr />
+  </div>
+
+
+
+    <div class='options container-fluid'>
+          <hr />
+      <div class='row'>
+        <div class='optionsInput col-md'>
+        <h3 class='inerHeader'>Your Options</h3>
+        <p class='directions text-justify'>
+          Nunc rhoncus orci nisi, a convallis nisl dapibus non. Nullam sit amet convallis mi. Curabitur viverra ut arcu eget ullamcorper. Sed at mi id enim tristique pretium. Vivamus a vehicula massa. Donec nec nisl a purus imperdiet sagittis sit amet ac orci. Cras ornare hendrerit gravida. Phasellus maximus, nunc at gravida volutpat, massa neque imperdiet risus, eu ornare quam mi quis justo. In dignissim eleifend turpis. Fusce rhoncus vestibulum ante eu ultricies. Nullam accumsan sit amet mi ultricies vehicula. Praesent sollicitudin quam in iaculis rhoncus.
+        </p>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Option:</span>
+          </div>
+          <input class="form-control newOptionInput" placeholder="Option Name" aria-label="Option Name" aria-describedby="basic-addon1">
+        </div>
+
+        <button class='newOptionButton my-4 btn btn-primary btn-sm btn-block'>Add a New Option</button>
+        <ul class='optionAddList'>
+        </ul>
+      </div>
+      <div class='optionsOutput col-md'>
+        <h3>Your Options</h3>
+        <ul class='optionsList'>
+        </ul>
+        <button type="button" class='saveAllOptionsButton btn btn-success btn-block my-3'>Save All Options</button>
+
+      </div>
+    </div>
+        <hr />
+  </div>
+    <div class='tableDiv'>
+      <p class='text-justify scoringDirections'>
+        Donec scelerisque maximus neque, et pharetra risus pretium ut. Curabitur suscipit aliquam ipsum, a faucibus velit porttitor in. Sed in ex libero. Integer auctor nisi non lacus suscipit, gravida elementum urna imperdiet. Fusce pellentesque tincidunt nisl, id elementum eros vulputate nec. Donec sit amet vestibulum lacus. Cras aliquam fringilla malesuada. Cras egestas, lectus bibendum accumsan sagittis, risus tellus laoreet neque, id semper dolor massa at arcu. Ut mollis fringilla tortor, ut hendrerit neque mattis nec. Mauris cursus dolor eu turpis pellentesque, ut mattis lacus scelerisque. Sed id quam tempor, pulvinar mi eu, congue leo. Aliquam cursus est a urna varius, sed dapibus neque iaculis. Nullam maximus, diam eu vestibulum lacinia, purus justo rutrum purus, egestas vehicula tortor mauris nec nulla.
+      </p>
+          <hr />
+    </div>
+    <div id='finalAnswerDiv'>
+    </div>
+    <script type = "text/javascript" src = "app.js"></script>
+
+  </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div> -->
+
+    <!-- APP HTML ENDS -->
+  </body>
+</html>

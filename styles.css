@@ -1,0 +1,198 @@
+body, html {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  margin: 0 30px;
+  height: 100%;
+
+}
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 100%;
+  overflow-y:scroll;
+}
+.indexContainer
+ {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+
+}
+
+.criteria,
+.options {
+  height: 400px;
+}
+
+.options,
+.tableDiv,
+.saveCriteriaListButton {
+  display: none;
+}
+
+.optionsOutput,
+.criteriaOutput {
+  overflow: scroll;
+  height: 380px;
+}
+
+.scoringTable {
+  width: 100%;
+  display:
+}
+
+.saveAllCriteriaButton,
+.saveAllOptionsButton {
+  display: none;
+}
+
+.socringTable td {
+  width: auto;
+}
+
+.cell{
+  width: 100%;
+}
+
+/* .scoringTable th {
+  background-color: gray;
+  color: white;
+} */
+
+table {
+  width: 100%;
+}
+/* table td {
+  width: 50%;
+} */
+table td input {
+  width: 100%;
+}
+
+.criteria,
+.options {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+}
+
+.newCriteriaList,
+.optionAddList,
+.optionsList,
+.criteriaList {
+  list-style: none;
+  margin: 0 auto;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.newCriteriaList li,
+.optionAddList li,
+.optionsList li,
+.criteriaList li {
+  margin-top: 5px;
+  margin-lef: 0;
+}
+
+.tableDiv {
+  text-align:center;
+}
+
+.tableDiv button {
+  width: 40%;
+}
+
+
+
+
+/* Font Definitions */
+
+h1 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h3 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 900;
+	line-height: 15.4px;
+}
+p {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+
+/* Table Styling */
+
+@media screen and (max-width: 580px) {
+.scoringTable tr {
+    padding: 14px 0 7px;
+    display: block;
+  }
+.scoringTable tr.header {
+    padding: 0;
+    height: 6px;
+  }
+.scoringTable tr.header .cell {
+    display: none;
+  }
+.scoringTable tr td {
+    margin-bottom: 10px;
+  }
+.scoringTable tr td:before {
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #969696;
+    display: block;
+  }
+}
+
+.scoringTable tr td {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+.scoringTable tr td {
+    padding: 2px 16px;
+    display: block;
+  }
+}
