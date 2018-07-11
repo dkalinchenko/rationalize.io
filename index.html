@@ -7,129 +7,87 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   </head>
   <body>
 
-    <!-- INDEX PAGE HTML BEGINS -->
 
+    <!-- <nav class="navbar fixed-top navbar-light bg-light text-center">
+      <a href="theory.html">theory</a> <a href='about.html'>about</a>
+    </nav> -->
     <div class='indexContainer'>
         <h1 class="display-4 text-center">Rationalize.io</h1>
         <p class="lead text-center">Make better decisions</p>
         <hr class="my-4">
         <a class="btn btn-light btn-block" href="rationalize.html" role="button" >Launch the App</a>
-    </div>
-
-    <!-- INDEX PAGE HTML ENDS -->
-
-    <!-- APP HTML BEGINS -->
-
-    <!-- <div class="modal fade" id="appModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-
-
-    <div class='header'>
-      <h1 class='decisionName text-center display-4'>Rationalize.io</h1>
-    </div>
-
-      <div class='criteria container-fluid'>
-        <hr />
-        <div class='row'>
-          <div class='criteriaInput col-md'>
-            <h3 class='innerHeader'>Define the Criteria</h3>
-            <p class='directions text-justify'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis egestas arcu nec tempus. Maecenas pellentesque nibh non leo rhoncus, ac ultrices dolor pharetra. Phasellus ut tortor nisi. Mauris eget tellus metus. Morbi vulputate orci quis massa ullamcorper, et tincidunt dolor porttitor. Sed tempus ligula a nisl blandit suscipit. Aenean malesuada nisi et neque feugiat viverra. Praesent mauris orci, pellentesque ut ligula nec, fringilla faucibus felis. Fusce sodales vestibulum erat vel fringilla. Pellentesque sodales massa quis bibendum porta. Aliquam pellentesque ligula ac porttitor auctor. Duis consequat lacinia dolor, ac volutpat est placerat id.
-            </p>
-
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Criteria:</span>
-              </div>
-              <input class="form-control newCriteriaInput" placeholder="Criteria Name" aria-label="Criteria Name" aria-describedby="basic-addon1">
-            </div>
-
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Weight:</span>
-              </div>
-              <input class="form-control newCriteriaWeight" placeholder="Criteria Weight" aria-label="Criteria Weight" aria-describedby="basic-addon1">
-            </div>
-            <button type="button" class='newCriteriaButton btn btn-primary btn-sm btn-block'>Add a New Criteria</button>
-        </div>
-
-    <div class='criteriaOutput col-md'>
-      <h3>Your Chosen Criteria</h3>
-      <ul class='criteriaList'>
-      </ul>
-      <button type="button" class='saveAllCriteriaButton btn btn-success btn-block my-3'>Save All Criteria</button>
-
-    </div>
-  </div>
-  <hr />
-  </div>
-
-
-
-    <div class='options container-fluid'>
-          <hr />
-      <div class='row'>
-        <div class='optionsInput col-md'>
-        <h3 class='inerHeader'>Your Options</h3>
-        <p class='directions text-justify'>
-          Nunc rhoncus orci nisi, a convallis nisl dapibus non. Nullam sit amet convallis mi. Curabitur viverra ut arcu eget ullamcorper. Sed at mi id enim tristique pretium. Vivamus a vehicula massa. Donec nec nisl a purus imperdiet sagittis sit amet ac orci. Cras ornare hendrerit gravida. Phasellus maximus, nunc at gravida volutpat, massa neque imperdiet risus, eu ornare quam mi quis justo. In dignissim eleifend turpis. Fusce rhoncus vestibulum ante eu ultricies. Nullam accumsan sit amet mi ultricies vehicula. Praesent sollicitudin quam in iaculis rhoncus.
+        <p class = 'text-center mt-3' >
+          <a href="" data-toggle="modal" data-target="#theory">theory</a> | <a href="" data-toggle="modal" data-target="#about">about</a>
         </p>
+    </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Option:</span>
+
+    <!-- THEORY MODAL CODE BEGINS -->
+
+    <div class="modal fade" id="theory" tabindex="-1" role="dialog" aria-labelledby="theory" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Theory</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <input class="form-control newOptionInput" placeholder="Option Name" aria-label="Option Name" aria-describedby="basic-addon1">
+          <div class="modal-body">
+            <p class = 'text-justify'>
+              This simple app is based on <a href='https://en.wikipedia.org/wiki/Stuart_Pugh'>Stuart Pugh's</a> <a href='https://en.wikipedia.org/wiki/Decision-matrix_method'>Decision Matrix</a>. Per Wikipedia:
+              <br /><blockquote class="blockquote" cite="https://en.wikipedia.org/wiki/Decision-matrix_method"><p><small>The decision-matrix method, also Pugh method or Pugh Concept Selection, invented by Stuart Pugh, is a qualitative technique used to rank the multi-dimensional options of an option set. It is frequently used in engineering for making design decisions but can also be used to rank investment options, vendor options, product options or any other set of multidimensional entities.
+
+                <br />A basic decision matrix consists of establishing a set of criteria options which are scored and summed to gain a total score which can then be ranked. Importantly, it is not weighted to allow a quick selection process.
+
+                <br />A weighted decision matrix operates in the same way as the basic decision matrix but introduces the concept of weighting the criteria in order of importance. The resultant scores better reflect the importance to the decision maker of the criteria involved. The more important the criteria the higher the weighting it should be given. Each of the potential options are scored and also multiplied by the weighting given to each of the criteria in order to produce a result.
+
+                <br />The advantage of the decision making matrix is that subjective opinions about one alternative versus another can be made more objective. Another advantage of this method is that sensitivity studies can be performed. An example of this might be to see how much your opinion would have to change in order for a lower ranked alternative to out rank a competing alternative.
+                </small></p>
+              </blockquote>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-
-        <button class='newOptionButton my-4 btn btn-primary btn-sm btn-block'>Add a New Option</button>
-        <ul class='optionAddList'>
-        </ul>
-      </div>
-      <div class='optionsOutput col-md'>
-        <h3>Your Options</h3>
-        <ul class='optionsList'>
-        </ul>
-        <button type="button" class='saveAllOptionsButton btn btn-success btn-block my-3'>Save All Options</button>
-
       </div>
     </div>
-        <hr />
-  </div>
-    <div class='tableDiv'>
-      <p class='text-justify scoringDirections'>
-        Donec scelerisque maximus neque, et pharetra risus pretium ut. Curabitur suscipit aliquam ipsum, a faucibus velit porttitor in. Sed in ex libero. Integer auctor nisi non lacus suscipit, gravida elementum urna imperdiet. Fusce pellentesque tincidunt nisl, id elementum eros vulputate nec. Donec sit amet vestibulum lacus. Cras aliquam fringilla malesuada. Cras egestas, lectus bibendum accumsan sagittis, risus tellus laoreet neque, id semper dolor massa at arcu. Ut mollis fringilla tortor, ut hendrerit neque mattis nec. Mauris cursus dolor eu turpis pellentesque, ut mattis lacus scelerisque. Sed id quam tempor, pulvinar mi eu, congue leo. Aliquam cursus est a urna varius, sed dapibus neque iaculis. Nullam maximus, diam eu vestibulum lacinia, purus justo rutrum purus, egestas vehicula tortor mauris nec nulla.
-      </p>
-          <hr />
-    </div>
-    <div id='finalAnswerDiv'>
-    </div>
-    <script type = "text/javascript" src = "app.js"></script>
 
-  </div>
-    <div class="modal-footer">
-    </div>
-  </div>
-</div>
-</div> -->
+    <!-- THEORY MODAL CODE ENDS -->
 
-    <!-- APP HTML ENDS -->
+    <!-- ABOUT MODAL CODE BEGINS -->
+
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="about" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">About</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class = 'text-justify'>
+              About page
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT MODAL CODE ENDS -->
+
+
+
   </body>
 </html>
