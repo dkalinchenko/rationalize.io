@@ -23,6 +23,13 @@ h1 a:visited {
   text-decoration: none;
 }
 
+.dima {
+  width: 25%;
+  height: 25%;
+  float: left;
+  padding-right: 10px;
+}
+
 .indexContainer
  {
   position: fixed;
