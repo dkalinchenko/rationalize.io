@@ -1,15 +1,17 @@
 // Define UI element variables
+let newDecisionButton = document.querySelector('.newDecisionButton')
 let newCriteriaButton = document.querySelector('.newCriteriaButton')
 let newOptionButton = document.querySelector('.newOptionButton')
 let optionsList = document.querySelector('.optionsList')
 let criteriaList = document.querySelector('.criteriaList')
 let scoringTable = document.createElement('table')
 let tableRows = scoringTable.rows
+let decisionNameInput = document.querySelector('.decisionNameInput')
 let newCriteriaInput = document.querySelector('.newCriteriaInput')
 let newCriteriaWeight = document.querySelector('.newCriteriaWeight')
 let saveAllOptionsButton = document.querySelector('.saveAllOptionsButton')
 let calcRDbutton = document.createElement('button')
-let backToCriteriaButton = document.createElement('button')
+let backToCriteriaButton = document.querySelector('.backToCriteriaButton')
 let eraseTableButton = document.createElement('button')
 let newOptionInput = document.querySelector('.newOptionInput')
 
@@ -22,11 +24,39 @@ let inputScoreArray = [] // Contains all the weights fromt the scoringTable mult
 let optionScoreArray = [] // Contains the calculated scores for each object, or, more simply, sums of columsn for the scoringTable
 
 
+// THIS SECTION DEFINES THE DECISION PROBLEM (THE FIRST SCREEN)
+newDecisionButton.addEventListener('click', () =>{
+  if(decisionNameInput.value === ""){
+    alert("Please enter the decision name before proceeding")
+  } else {
+    document.querySelector('.decisionHeader').innerHTML = decisionNameInput.value
+    }
+  })
+
+// jQuery ENABLED FADES
+$(".newDecisionButton").click(function(){
+  $(".definition").fadeOut("slow");
+  $(".criteria").delay(400).fadeIn("slow");
+})
+
+$(".saveAllCriteriaButton").click(function(){
+  $(".criteria").fadeOut("slow");
+  $(".options").delay(400).fadeIn("slow");
+})
+
+$(".saveAllOptionsButton").click(function(){
+  $(".options").fadeOut("slow");
+  $(".tableDiv").delay(400).fadeIn("slow");
+})
+
+$(".backToCriteriaButton").click(function(){
+  $(".tableDiv").fadeOut("slow");
+  $(".criteria").delay(400).fadeIn("slow");
+})
 
 
 
-
-// THIS SECTION DEFINES THE CRITERIA ON WHICH THE OPTIONS WILL BE EVALUATED (THE FIRST SCREEN)
+// THIS SECTION DEFINES THE CRITERIA ON WHICH THE OPTIONS WILL BE EVALUATED (THE SECOND SCREEN)
 
 // Define the functionality of the 'Add a New Criteria Button'
 newCriteriaButton.addEventListener('click', () => {
@@ -45,7 +75,7 @@ newCriteriaButton.addEventListener('click', () => {
 
     // Create & define the functionality of "Remove Criteria" button
     let removeSavedCriteria = document.createElement ('button')
-    removeSavedCriteria.className = 'removeSavedCriteria btn btn-warning btn-sm btn-block'
+    removeSavedCriteria.className = 'removeSavedCriteria'
     removeSavedCriteria.textContent = 'Remove Criteria'
     removeSavedCriteria.addEventListener ('click', () => {
       // Nix the criteria name and weight out of their arrays
@@ -61,21 +91,23 @@ newCriteriaButton.addEventListener('click', () => {
     let saveAllCriteriaButton = document.querySelector('.saveAllCriteriaButton')
     saveAllCriteriaButton.style.display = 'inherit'
     saveAllCriteriaButton.addEventListener('click', () => {
-    document.querySelector('.options').style.display = 'inherit'
-    document.querySelector('.criteria').style.display = 'none'
+    // document.querySelector('.options').style.display = 'inherit'
+    // document.querySelector('.criteria').style.display = 'none'
     })
   }
   })
 
 
-// THIS SECTION DEFINES THE OPTIONS AVAILABLE TO THE USER (THE SECOND SCREEN)
+
+
+// THIS SECTION DEFINES THE OPTIONS AVAILABLE TO THE USER (THE THIRD SCREEN)
 
   // Define the functionality of the "Add a New Option Button" button which appends the user input to the optionsList and pushes option name into optionNameArray
   newOptionButton.addEventListener('click', () => {
     // Create a new list item and push the contents from the input into it
     let savedOptionliItem = document.createElement('li')
     let removeSavedOptionButton = document.createElement('button')
-    removeSavedOptionButton.className = "removeSavedOptionButton btn btn-warning btn-sm btn-block"
+    removeSavedOptionButton.className = "removeSavedOptionButton"
     removeSavedOptionButton.textContent = "Remove Option"
     savedOptionliItem.className = 'list-group-item list-group-item-action'
     savedOptionliItem.innerHTML = '<table><tr><td><b>Option:</b> </td><td class="optionNameCell">' + newOptionInput.value + "</td></tr></table>"
@@ -100,8 +132,8 @@ newCriteriaButton.addEventListener('click', () => {
 // Define the functionality of 'Save All Options' button which saves the defined criteria and options and displays it as a row in a table
 saveAllOptionsButton.addEventListener ('click', () => {
   // Reveal the table Div and append the scoring table onto it
-  document.querySelector('.tableDiv').style.display = 'inherit'
-  document.querySelector('.options').style.display = 'none'
+  // document.querySelector('.tableDiv').style.display = 'inherit'
+  // document.querySelector('.options').style.display = 'none'
   document.querySelector('.tableDiv').appendChild(scoringTable)
   scoringTable.className = 'scoringTable'
 
@@ -128,14 +160,20 @@ saveAllOptionsButton.addEventListener ('click', () => {
         let optionColumn = document.createElement('th')
         criteriaRow.appendChild(optionColumn)
         let tableInput = document.createElement('input')
-        tableInput.value = '3'
+        tableInput.value = ''
         tableInput.className = 'cell'
         optionColumn.appendChild(tableInput)
     }
   }
 
   // Create Save button for the table
-  calcRDbutton.className = "btn btn-primary btn-sm m-4"
+  calcRDbutton.className = "calcRDbutton m-4"
+  calcRDbutton.setAttribute('data-toggle','modal')
+  calcRDbutton.setAttribute('data-target','#finalAnswer')
+
+
+  // data-toggle="modal" data-target="#finalAnswer
+
   calcRDbutton.textContent = 'Calculate the Rational Option'
   document.querySelector('.tableDiv').appendChild(calcRDbutton)
 
@@ -192,7 +230,7 @@ saveAllOptionsButton.addEventListener ('click', () => {
     })
 
     // Define functionality of "Recalculate" button which clears the arrays and removes the last row from the table
-    eraseTableButton.className = "btn btn-warning btn-sm m-4"
+    eraseTableButton.className = "eraseTableButton m-4"
     eraseTableButton.textContent = "Recalculate"
     document.querySelector('.tableDiv').appendChild(eraseTableButton)
     eraseTableButton.addEventListener ('click', () =>{
@@ -205,19 +243,9 @@ saveAllOptionsButton.addEventListener ('click', () => {
     })
 
     // Define functionality of the button that takes the user back to defining the criteria and options
-    backToCriteriaButton.className = "btn btn-light btn-sm m-4"
-    backToCriteriaButton.textContent = "<<< Adjust the Options and Criteria"
     backToCriteriaButton.addEventListener('click', () => {
-      //hide the table element and display the criteria selection element
-      document.querySelector('.tableDiv').style.display = 'none'
-      document.querySelector('.criteria').style.display = 'inherit'
-      //remove the elements to be re-appended later
+      //remove the table to be re-appended later
       scoringTable.innerHTML = ""
-      document.querySelector('.tableDiv').removeChild(calcRDbutton)
-      document.querySelector('.tableDiv').removeChild(eraseTableButton)
-      document.querySelector('.tableDiv').removeChild(backToCriteriaButton)
-      document.querySelector('#finalAnswerDiv').innerHTML = ""
     })
-    document.querySelector('.tableDiv').insertBefore(backToCriteriaButton, document.querySelector('.scoringDirections'))
   }
 )

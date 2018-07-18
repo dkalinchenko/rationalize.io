@@ -4,16 +4,22 @@ body, html {
   height: 100%;
 
 }
-.wrapper,
-.theoryContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+.wrapper, {
+  position:relative;
   width: 80%;
   height: 100%;
   overflow-y:scroll;
+}
+
+.definition,
+.criteria,
+.options,
+  {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
 }
 
 h1 a,
@@ -23,6 +29,50 @@ h1 a:visited {
   text-decoration: none;
 }
 
+.newCriteriaButton,
+.newOptionButton,
+.newDecisionButton,
+.saveAllCriteriaButton,
+.saveAllOptionsButton,
+.calcRDbutton {
+  background-color: #6DC0D5;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+.newCriteriaButton:hover,
+.newOptionButton:hover,
+.newDecisionButton:hover,
+.saveAllCriteriaButton:hover,
+.saveAllOptionsButton:hover,
+.calcRDbutton:hover {
+  background-color: #006E90;
+}
+
+.eraseTableButton,
+.removeSavedCriteria,
+.removeSavedOptionButton {
+  background-color: #d5826d;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  margin-top: 1em;
+}
+
+.eraseTableButton:hover,
+.removeSavedCriteria:hover,
+.removeSavedOptionButton:hover {
+  background-color: #ca6045;
+}
+
+
 .dima {
   width: 40%;
   height: 40%;
@@ -30,14 +80,11 @@ h1 a:visited {
   padding-right: 10px;
 }
 
-.indexContainer
- {
+.indexContainer{
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
-
 }
 
 .criteria,
@@ -45,6 +92,7 @@ h1 a:visited {
   height: 400px;
 }
 
+.criteria,
 .options,
 .tableDiv,
 .saveCriteriaListButton {
@@ -54,7 +102,7 @@ h1 a:visited {
 .optionsOutput,
 .criteriaOutput {
   overflow: scroll;
-  height: 380px;
+  height: 400px;
 }
 
 .scoringTable {
@@ -75,26 +123,12 @@ h1 a:visited {
   width: 100%;
 }
 
-/* .scoringTable th {
-  background-color: gray;
-  color: white;
-} */
-
 table {
   width: 100%;
 }
-/* table td {
-  width: 50%;
-} */
+
 table td input {
   width: 100%;
-}
-
-.criteria,
-.options {
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
 }
 
 .newCriteriaList,
