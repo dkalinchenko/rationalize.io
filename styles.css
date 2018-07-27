@@ -1,0 +1,265 @@
+body, html {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  margin: 0 30px;
+  height: 100%;
+
+}
+.wrapper, {
+  position:relative;
+  width: 80%;
+  height: 100%;
+  overflow-y:scroll;
+}
+
+.definition,
+.criteria,
+.options,
+  {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+}
+
+h1 a,
+h1 a:hover,
+h1 a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.newCriteriaButton,
+.newOptionButton,
+.newDecisionButton,
+.saveAllCriteriaButton,
+.saveAllOptionsButton,
+.calcRDbutton {
+  background-color: #6DC0D5;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+.newCriteriaButton:hover,
+.newOptionButton:hover,
+.newDecisionButton:hover,
+.saveAllCriteriaButton:hover,
+.saveAllOptionsButton:hover,
+.calcRDbutton:hover {
+  background-color: #006E90;
+}
+
+.eraseTableButton,
+.removeSavedCriteria,
+.removeSavedOptionButton {
+  background-color: #d5826d;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  margin-top: 1em;
+}
+
+.eraseTableButton:hover,
+.removeSavedCriteria:hover,
+.removeSavedOptionButton:hover {
+  background-color: #ca6045;
+}
+
+
+.dima {
+  width: 40%;
+  height: 40%;
+  float: left;
+  padding-right: 10px;
+}
+
+.indexContainer{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.criteria,
+.options {
+  height: 400px;
+}
+
+.criteria,
+.options,
+.tableDiv,
+.saveCriteriaListButton {
+  display: none;
+}
+
+.optionsOutput,
+.criteriaOutput {
+  overflow: scroll;
+  height: 400px;
+}
+
+.scoringTable {
+  width: 100%;
+  display:
+}
+
+.saveAllCriteriaButton,
+.saveAllOptionsButton {
+  display: none;
+}
+
+.socringTable td {
+  width: auto;
+}
+
+.cell{
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+table td input {
+  width: 100%;
+}
+
+.newCriteriaList,
+.optionAddList,
+.optionsList,
+.criteriaList {
+  list-style: none;
+  margin: 0 auto;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.newCriteriaList li,
+.optionAddList li,
+.optionsList li,
+.criteriaList li {
+  margin-top: 5px;
+  margin-lef: 0;
+}
+
+.tableDiv {
+  text-align:center;
+}
+
+.tableDiv button {
+  width: 40%;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+
+/* Font Definitions */
+
+h1 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h3 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 900;
+	line-height: 15.4px;
+}
+p {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+
+/* Table Styling */
+
+@media screen and (max-width: 580px) {
+.scoringTable tr {
+    padding: 14px 0 7px;
+    display: block;
+  }
+.scoringTable tr.header {
+    padding: 0;
+    height: 6px;
+  }
+.scoringTable tr.header .cell {
+    display: none;
+  }
+.scoringTable tr td {
+    margin-bottom: 10px;
+  }
+.scoringTable tr td:before {
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #969696;
+    display: block;
+  }
+}
+
+.scoringTable tr td {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+.scoringTable tr td {
+    padding: 2px 16px;
+    display: block;
+  }
+}
