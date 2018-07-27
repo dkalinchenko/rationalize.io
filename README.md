@@ -1,0 +1,1 @@
+Rationalize.io is a simple app to make better decisions. It is also Dima's project to learn coding.
