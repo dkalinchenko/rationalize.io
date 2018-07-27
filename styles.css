@@ -2,7 +2,14 @@ body, html {
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   margin: 0 30px;
   height: 100%;
-
+  background-color: inherit;
+}
+html {
+  background: url(rationalize-cover.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .wrapper, {
   position:relative;
@@ -85,6 +92,9 @@ h1 a:visited {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .criteria,
