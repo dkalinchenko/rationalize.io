@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rationalize.io</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122530493-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122530493-1');
+  </script>
+
+
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class='wrapper'>
+    <div class='header'>
+      <h1 class="text-center mt-3 decisionHeader"><a href='index.html'>Rationalize.io</a></h1>
+    </div>
+
+    <div class='definition container-fluid'>
+      <hr />
+      <h3 class='innerHeader'>Step 1: Let's Define the Decision</h3>
+      <p class='directions text-justify'>
+        The first step in the process of making a good decision is making sure we are clear on what that decision actually is.
+        In this step of the process, take some time and think a bit through this problem.
+        Why is this problem an important one to you?
+        What exactly are you trying to clarify?
+        When you have described this problem in your head, come up with a title for this decision and write it down in the field bellow.
+      </p>
+      <h2 class='text-center'>
+        Decision Name
+      </h2>
+      <input class="form-control decisionNameInput" placeholder="Decision Name" aria-label="Decision Name" aria-describedby="basic-addon1">
+      <br />
+      <button type="button" class='newDecisionButton'>Save the Decision Name</button>
+      <hr />
+    </div>
+
+    <div class='criteria container-fluid'>
+      <hr />
+      <div class='row'>
+        <div class='criteriaInput'>
+          <h3 class='innerHeader'>Step 2: Define the Criteria</h3>
+          <p class='directions text-justify'>
+            Now that you have formalized the problem in your head, it is time to define the criteria you are going to use to make this decision.
+            Criteria answers the question of <em>"What matters to you?"</em> in this decision making process and the weight of each criteria answers the question <em>"How much does it matter?"</em>. <br /><br />
+            For example, if you are deciding between different cars you are looking to buy, your criteria may include things like: fuel economy, price, acceleration, newness, how much my spouse likes it, etc.
+            Chances are, not all of those criteria is equally important to you, so you for the most important criteria, you should assign the value of 10 and for the least important one it should be 1.
+
+          </p>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Criteria:</span>
+            </div>
+            <input class="form-control newCriteriaInput" placeholder="Criteria Name" aria-label="Criteria Name" aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Weight:</span>
+            </div>
+              <select class='newCriteriaWeight form-control'>
+                <option value="0">Select Criteria Weight:</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+              </select>
+          </div>
+          <button type="button" class='newCriteriaButton mb-2'>Add a New Criteria</button>
+        </div>
+
+        <div class='criteriaOutput'>
+          <h3>Your Chosen Criteria</h3>
+          <ul class='criteriaList'>
+          </ul>
+          <button type="button" class='saveAllCriteriaButton my-3'>Save All Criteria</button>
+
+        </div>
+      </div>
+      <hr />
+    </div>
+
+
+
+    <div class='options container-fluid'>
+      <hr />
+      <div class='row'>
+        <div class='optionsInput col-md'>
+          <h3 class='inerHeader'>Step 3: Define Your Options</h3>
+          <p class='directions text-justify'>
+            In this section, you define the options that are available to you.
+            These are, simply, you alternatives or courses of action you are considering.<br /><br />
+            Going back to the car-buying decision, your options in this scenario would be cars you are considering.
+            The options, in this case, could look like: BMW 3 Series, Tesla Model S, Audi A4, etc.
+          </p>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Option:</span>
+            </div>
+            <input class="form-control newOptionInput" placeholder="Option Name" aria-label="Option Name" aria-describedby="basic-addon1">
+          </div>
+
+          <button class='newOptionButton my-3'>Add a New Option</button>
+          <ul class='optionAddList'>
+          </ul>
+        </div>
+        <div class='optionsOutput col-md'>
+          <h3>Your Options</h3>
+          <ul class='optionsList'>
+          </ul>
+          <button type="button" class='saveAllOptionsButton my-3'>Save All Options</button>
+
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <div class='tableDiv'>
+      <button type="button" class='btn btn-light btn-sm m-4 backToCriteriaButton'><<< Adjust the Options and Criteria</button>
+      <h3 class='inerHeader step4 text-left'>Step 4: Rank Your Options on the Chosen Criteria</h3>
+      <p class='text-justify scoringDirections'>
+        This is the final step of this decision-making process.
+        Here, you have to think through every option that you have available and rank it on how well it satisfies your chosen criteria.
+        The better the option satisfies the criteria, the closer to 10 should the number be. <br /><br />
+        In the car-buying example, each one of the described options, will likely perform differently on the criteria we've outlined in the Step 1 of the process.
+        So, for example, Tesla Model S scores might be the following: fuel economy: 10, price: 1, acceleration: 9, how much my spouse likes it: 5. For BMW Model 3, the scores could be: fuel economy: 5, price: 8, acceleration: 5, how much my spouse likes it: 8. <br /> <br />
+        Once you are done filling out the table, click "Calculate Rational Option" button to run the calculation and figure out what your best bet is. You can always erase the calculated values by clicking "Recalculate" or adjust your Options and Criteira by clicking the button above.
+      </p>
+      <hr />
+    </div>
+
+    <div class="modal fade" id="finalAnswer" tabindex="-1" role="dialog" aria-labelledby="finalAnswer" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">...and the final answer is:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body finalAnswerDiv" id='finalAnswerDiv'>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
