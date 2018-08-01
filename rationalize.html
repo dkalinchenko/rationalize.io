@@ -25,16 +25,22 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
 </head>
 
 <body>
-  <div class='wrapper'>
+  <div class='wrapper pt-2'>
     <div class='header'>
-      <h1 class="display-4 text-center decisionHeader"><a href='index.html'>Rationalize.io</a></h1>
+      <h1 class="text-center decisionHeader"><a href='index.html'>Rationalize.io</a></h1>
     </div>
 
-    <div class='definition container-fluid'>
-      <hr />
+<!-- STEP 1 - DECISION NAME DEFINITION -->
+
+    <div class='definition mx-0 mx-auto'>
+            <hr />
+      <div class='col'>
       <h3 class='innerHeader'>Step 1: Let's Define the Decision</h3>
       <p class='directions text-justify'>
         The first step in the process of making a good decision is making sure we are clear on what that decision actually is.
@@ -49,12 +55,17 @@
       <input class="form-control decisionNameInput" placeholder="Decision Name" aria-label="Decision Name" aria-describedby="basic-addon1">
       <br />
       <button type="button" class='newDecisionButton'>Save the Decision Name</button>
-      <hr />
+    </div>
+          <hr />
     </div>
 
-    <div class='criteria container-fluid'>
+
+
+<!-- STEP 2 - CRITERIA SELECTION AND DEFINITION -->
+
+    <div class='criteria mx-auto mx-0'>
       <hr />
-      <div class='row'>
+      <div class='row mx-auto'>
         <div class='criteriaInput col-md'>
           <h3 class='innerHeader'>Step 2: Define the Criteria</h3>
           <p class='directions text-justify'>
@@ -105,11 +116,11 @@
       <hr />
     </div>
 
+<!-- STEP 3 - OPTIONS DEFINITION -->
 
-
-    <div class='options container-fluid'>
+    <div class='options mx-auto mx-0'>
       <hr />
-      <div class='row'>
+      <div class='row mx-auto'>
         <div class='optionsInput col-md'>
           <h3 class='inerHeader'>Step 3: Define Your Options</h3>
           <p class='directions text-justify'>
@@ -141,7 +152,10 @@
       <hr />
     </div>
 
+<!-- STEP 4 - FILLING OUT THE TABLE -->
+
     <div class='tableDiv'>
+      <div class='tableDef'>
       <button type="button" class='btn btn-light btn-sm m-4 backToCriteriaButton'><<< Adjust the Options and Criteria</button>
       <h3 class='inerHeader step4 text-left'>Step 4: Rank Your Options on the Chosen Criteria</h3>
       <p class='text-justify scoringDirections'>
@@ -152,6 +166,7 @@
         So, for example, Tesla Model S scores might be the following: fuel economy: 10, price: 1, acceleration: 9, how much my spouse likes it: 5. For BMW Model 3, the scores could be: fuel economy: 5, price: 8, acceleration: 5, how much my spouse likes it: 8. <br /> <br />
         Once you are done filling out the table, click "Calculate Rational Option" button to run the calculation and figure out what your best bet is. You can always erase the calculated values by clicking "Recalculate" or adjust your Options and Criteira by clicking the button above.
       </p>
+            </div>
       <hr />
     </div>
 

@@ -1,34 +1,57 @@
 body, html {
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  margin: 0 30px;
   height: 100%;
   background-color: inherit;
 }
 
-.wrapper, {
-  position:relative;
+/* INDEX PAGE STYLING */
+
+.indexContainer{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  padding: 20px;
   width: 80%;
+}
+
+/* DIV STYLES */
+
+.wrapper {
+  position:relative;
   height: 100%;
   overflow-y:scroll;
 }
 
-.definition,
+.tableDef {
+  padding-left: 15px;
+  padding-right: 15px;
+  }
+
 .criteria,
-.options,
-  {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  width: 70%;
-  transform: translate(-50%, -50%);
+.options {
+  height: 400px;
 }
 
-h1 a,
-h1 a:hover,
-h1 a:visited {
-  color: black;
-  text-decoration: none;
+.criteria,
+.options,
+.tableDiv,
+.saveCriteriaListButton {
+  display: none;
 }
+
+.optionsOutput,
+.criteriaOutput {
+  overflow: scroll;
+  height: 100%;
+}
+
+.tableDiv {
+  text-align:center;
+}
+/* BUTTON STYLES */
 
 .newCriteriaButton,
 .newOptionButton,
@@ -42,7 +65,6 @@ h1 a:visited {
   width: 100%;
   border-radius: 5px;
   color: white;
-  font-size: 15px;
 }
 
 .newCriteriaButton:hover,
@@ -73,58 +95,42 @@ h1 a:visited {
   background-color: #ca6045;
 }
 
-
-.dima {
-  width: 40%;
-  height: 40%;
-  float: left;
-  padding-right: 10px;
-}
-
-.indexContainer{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255,255,255,0.3);
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.criteria,
-.options {
-  height: 400px;
-}
-
-.criteria,
-.options,
-.tableDiv,
-.saveCriteriaListButton {
-  display: none;
-}
-
-.optionsOutput,
-.criteriaOutput {
-  overflow: scroll;
-  height: 400px;
-}
-
-.scoringTable {
-  width: 100%;
-  display:
-}
-
 .saveAllCriteriaButton,
 .saveAllOptionsButton {
   display: none;
 }
 
-.socringTable td {
+.calcRDbutton,
+.eraseTableButton {
+  width: 80%;
+  margin: 10px;
+
+}
+
+/* LINK STYLES */
+
+h1 a,
+h1 a:hover,
+h1 a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* RANDOM INDIVIDUAL ELEMENTS */
+
+
+
+
+/* TABLE STYLES */
+
+.scoringTable td {
   width: auto;
 }
 
 .cell{
   width: 100%;
+  border: 1px solid #ccc;
+
 }
 
 table {
@@ -135,6 +141,8 @@ table td input {
   width: 100%;
 }
 
+/* LIST STYLES */
+
 .newCriteriaList,
 .optionAddList,
 .optionsList,
@@ -142,6 +150,7 @@ table td input {
   list-style: none;
   margin: 0 auto;
 }
+
 ul {
   padding: 0;
   list-style-type: none;
@@ -152,15 +161,85 @@ ul {
 .optionsList li,
 .criteriaList li {
   margin-top: 5px;
-  margin-lef: 0;
+  margin-left: 0;
 }
 
-.tableDiv {
-  text-align:center;
+
+
+
+/* MARGIN ADJUST FOR A LARGER SCREEN (OTHER RESPONSIVE FEATURES ARE MADE VIA BOOTSTRAP) */
+
+@media only screen and (min-width: 768px) {
+  body, html {
+    margin: 0 30px;
+  }
+  .calcRDbutton,
+  .eraseTableButton {
+    width: 40%;
+  }
 }
 
-.tableDiv button {
+.dima {
   width: 40%;
+  height: 40%;
+  float: left;
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 420px) {
+
+.rHeader {
+  font-size: 2em;
+}
+}
+
+/* Font Definitions */
+
+h1 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 2em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+
+h2 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 2em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 900;
+}
+
+h3 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 1em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 900;
+}
+p {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+blockquote {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
 }
 
 blockquote {
@@ -180,90 +259,4 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
-}
-
-
-/* Font Definitions */
-
-h1 {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
-}
-h3 {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 900;
-	line-height: 15.4px;
-}
-p {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 20px;
-}
-blockquote {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 21px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 30px;
-}
-pre {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 13px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 18.5714px;
-}
-
-
-/* Table Styling */
-
-@media screen and (max-width: 580px) {
-.scoringTable tr {
-    padding: 14px 0 7px;
-    display: block;
-  }
-.scoringTable tr.header {
-    padding: 0;
-    height: 6px;
-  }
-.scoringTable tr.header .cell {
-    display: none;
-  }
-.scoringTable tr td {
-    margin-bottom: 10px;
-  }
-.scoringTable tr td:before {
-    margin-bottom: 3px;
-    content: attr(data-title);
-    min-width: 98px;
-    font-size: 10px;
-    line-height: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #969696;
-    display: block;
-  }
-}
-
-.scoringTable tr td {
-  padding: 6px 12px;
-  display: table-cell;
-}
-@media screen and (max-width: 580px) {
-.scoringTable tr td {
-    padding: 2px 16px;
-    display: block;
-  }
 }

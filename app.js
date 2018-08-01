@@ -167,7 +167,7 @@ saveAllOptionsButton.addEventListener ('click', () => {
   }
 
   // Create Save button for the table
-  calcRDbutton.className = "calcRDbutton m-4"
+  calcRDbutton.className = "calcRDbutton"
   calcRDbutton.setAttribute('data-toggle','modal')
   calcRDbutton.setAttribute('data-target','#finalAnswer')
 
@@ -230,7 +230,7 @@ saveAllOptionsButton.addEventListener ('click', () => {
     })
 
     // Define functionality of "Recalculate" button which clears the arrays and removes the last row from the table
-    eraseTableButton.className = "eraseTableButton m-4"
+    eraseTableButton.className = "eraseTableButton"
     eraseTableButton.textContent = "Recalculate"
     document.querySelector('.tableDiv').appendChild(eraseTableButton)
     eraseTableButton.addEventListener ('click', () =>{
