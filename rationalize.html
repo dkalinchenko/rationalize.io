@@ -9,7 +9,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122530493-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-122530493-1');
@@ -36,43 +39,45 @@
       <h1 class="text-center decisionHeader"><a href='index.html'>Rationalize.io</a></h1>
     </div>
 
-<!-- STEP 1 - DECISION NAME DEFINITION -->
+    <!-- STEP 1 - DECISION NAME DEFINITION -->
 
     <div class='definition mx-0 mx-auto'>
-            <hr />
+      <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+      </div>
+      <br />
       <div class='col'>
-      <h3 class='innerHeader'>Step 1: Let's Define the Decision</h3>
-      <p class='directions text-justify'>
-        The first step in the process of making a good decision is making sure we are clear on what that decision actually is.
-        In this step of the process, take some time and think a bit through this problem.
-        Why is this problem an important one to you?
-        What exactly are you trying to clarify?
-        When you have described this problem in your head, come up with a title for this decision and write it down in the field bellow.
-      </p>
-      <h2 class='text-center'>
+        <h3 class='innerHeader'>Step 1: Let's Define the Decision</h3>
+        <p class='directions text-justify'>
+          The first step in the process of making a good decision is making sure we are clear on what that decision actually is. In this step of the process, take some time and think a bit through this problem. Why is this problem an important one to you? What
+          exactly are you trying to clarify? When you have described this problem in your head, come up with a title for this decision and write it down in the field bellow.
+        </p>
+        <h2 class='text-center'>
         Decision Name
       </h2>
-      <input class="form-control decisionNameInput" placeholder="Decision Name" aria-label="Decision Name" aria-describedby="basic-addon1">
-      <br />
-      <button type="button" class='newDecisionButton'>Save the Decision Name</button>
+        <input class="form-control decisionNameInput" placeholder="Decision Name" aria-label="Decision Name" aria-describedby="basic-addon1">
+        <br />
+        <button type="button" class='newDecisionButton'>Save the Decision Name</button>
+      </div>
+      <hr />
     </div>
-          <hr />
-    </div>
 
 
 
-<!-- STEP 2 - CRITERIA SELECTION AND DEFINITION -->
+    <!-- STEP 2 - CRITERIA SELECTION AND DEFINITION -->
 
     <div class='criteria mx-auto mx-0'>
-      <hr />
+      <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+      <br />
       <div class='row mx-auto'>
         <div class='criteriaInput col-md'>
           <h3 class='innerHeader'>Step 2: Define the Criteria</h3>
           <p class='directions text-justify'>
-            Now that you have formalized the problem in your head, it is time to define the criteria you are going to use to make this decision.
-            Criteria answers the question of <em>"What matters to you?"</em> in this decision making process and the weight of each criteria answers the question <em>"How much does it matter?"</em>. <br /><br />
-            For example, if you are deciding between different cars you are looking to buy, your criteria may include things like: fuel economy, price, acceleration, newness, how much my spouse likes it, etc.
-            Chances are, not all of those criteria is equally important to you, so you for the most important criteria, you should assign the value of 10 and for the least important one it should be 1.
+            Now that you have formalized the problem in your head, it is time to define the criteria you are going to use to make this decision. Criteria answers the question of <em>"What matters to you?"</em> in this decision making process and the weight
+            of each criteria answers the question <em>"How much does it matter?"</em>. <br /><br /> For example, if you are deciding between different cars you are looking to buy, your criteria may include things like: fuel economy, price, acceleration,
+            newness, how much my spouse likes it, etc. Chances are, not all of those criteria is equally important to you, so you for the most important criteria, you should assign the value of 10 and for the least important one it should be 1.
 
           </p>
 
@@ -87,7 +92,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Weight:</span>
             </div>
-              <select class='newCriteriaWeight form-control'>
+            <select class='newCriteriaWeight form-control'>
                 <option value="0">Select Criteria Weight:</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -116,18 +121,19 @@
       <hr />
     </div>
 
-<!-- STEP 3 - OPTIONS DEFINITION -->
+    <!-- STEP 3 - OPTIONS DEFINITION -->
 
     <div class='options mx-auto mx-0'>
-      <hr />
+      <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+      </div>
+      <br />
       <div class='row mx-auto'>
         <div class='optionsInput col-md'>
           <h3 class='inerHeader'>Step 3: Define Your Options</h3>
           <p class='directions text-justify'>
-            In this section, you define the options that are available to you.
-            These are, simply, you alternatives or courses of action you are considering.<br /><br />
-            Going back to the car-buying decision, your options in this scenario would be cars you are considering.
-            The options, in this case, could look like: BMW 3 Series, Tesla Model S, Audi A4, etc.
+            In this section, you define the options that are available to you. These are, simply, you alternatives or courses of action you are considering.<br /><br /> Going back to the car-buying decision, your options in this scenario would be cars
+            you are considering. The options, in this case, could look like: BMW 3 Series, Tesla Model S, Audi A4, etc.
           </p>
 
           <div class="input-group">
@@ -152,21 +158,24 @@
       <hr />
     </div>
 
-<!-- STEP 4 - FILLING OUT THE TABLE -->
+    <!-- STEP 4 - FILLING OUT THE TABLE -->
 
     <div class='tableDiv'>
+      <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+      </div>
+      <br />
       <div class='tableDef'>
-      <button type="button" class='btn btn-light btn-sm m-4 backToCriteriaButton'><<< Adjust the Options and Criteria</button>
-      <h3 class='inerHeader step4 text-left'>Step 4: Rank Your Options on the Chosen Criteria</h3>
-      <p class='text-justify scoringDirections'>
-        This is the final step of this decision-making process.
-        Here, you have to think through every option that you have available and rank it on how well it satisfies your chosen criteria.
-        The better the option satisfies the criteria, the closer to 10 should the number be. <br /><br />
-        In the car-buying example, each one of the described options, will likely perform differently on the criteria we've outlined in the Step 1 of the process.
-        So, for example, Tesla Model S scores might be the following: fuel economy: 10, price: 1, acceleration: 9, how much my spouse likes it: 5. For BMW Model 3, the scores could be: fuel economy: 5, price: 8, acceleration: 5, how much my spouse likes it: 8. <br /> <br />
-        Once you are done filling out the table, click "Calculate Rational Option" button to run the calculation and figure out what your best bet is. You can always erase the calculated values by clicking "Recalculate" or adjust your Options and Criteira by clicking the button above.
-      </p>
-            </div>
+        <button type="button" class='btn btn-light btn-sm m-4 backToCriteriaButton'><<< Adjust the Options and Criteria</button>
+        <h3 class='inerHeader step4 text-left'>Step 4: Rank Your Options on the Chosen Criteria</h3>
+        <p class='text-justify scoringDirections'>
+          This is the final step of this decision-making process. Here, you have to think through every option that you have available and rank it on how well it satisfies your chosen criteria. The better the option satisfies the criteria, the closer to 10 should
+          the number be. <br /><br /> In the car-buying example, each one of the described options, will likely perform differently on the criteria we've outlined in the Step 1 of the process. So, for example, Tesla Model S scores might be the
+          following: fuel economy: 10, price: 1, acceleration: 9, how much my spouse likes it: 5. For BMW Model 3, the scores could be: fuel economy: 5, price: 8, acceleration: 5, how much my spouse likes it: 8. <br /> <br /> Once you are done filling
+          out the table, click "Calculate Rational Option" button to run the calculation and figure out what your best bet is. You can always erase the calculated values by clicking "Recalculate" or adjust your Options and Criteira by clicking the button
+          above.
+        </p>
+      </div>
       <hr />
     </div>
 

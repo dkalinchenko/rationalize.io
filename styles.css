@@ -6,15 +6,51 @@ body, html {
 
 /* INDEX PAGE STYLING */
 
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .25);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(0, 0, 0, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
 .indexContainer{
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255,255,255,0.3);
+  /* background-color: rgba(255,255,255,1); */
   border-radius: 5px;
   padding: 20px;
   width: 80%;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+}
+
+html {
+  background: url(rationalize-cover.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* DIV STYLES */
@@ -23,6 +59,11 @@ body, html {
   position:relative;
   height: 100%;
   overflow-y:scroll;
+  background-color: rgba(255,255,255, 0.9);
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .tableDef {
@@ -177,6 +218,14 @@ ul {
   .eraseTableButton {
     width: 40%;
   }
+
+  .indexContainer {
+    width: 50%;
+  }
+
+  /* .launchButton {
+    width: 60%;
+  } */
 }
 
 .dima {
