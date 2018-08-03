@@ -45,6 +45,11 @@ body, html {
 
 }
 
+/* MOBILE INDEX BACKGROUND STYLING */
+@media only screen and (min-width : 380px) {
+	background: url(rationalize-cover-mobile.jpg) no-repeat center center fixed;
+}
+
 html {
   background: url(rationalize-cover.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
