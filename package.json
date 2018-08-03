@@ -1,0 +1,28 @@
+{
+  "name": "rsass",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD Rationalize.io is a simple app to make better decisions. It is also Dima's project to learn coding. ======= # rationalize >>>>>>> 4862acc7b57223c9b5e6271f23f518bd5a4c23d4",
+  "main": "app.js",
+  "dependencies": {
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+"build-css": "node-sass --inclue-path scss scss/social.sass css/social.css",
+"watch-css": "nodemon -e scss -x \"npm run build-css\""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkalinchenko/rationalize.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkalinchenko/rationalize.io/issues"
+  },
+  "homepage": "https://github.com/dkalinchenko/rationalize.io#readme"
+}

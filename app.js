@@ -12,7 +12,6 @@ let newCriteriaWeight = document.querySelector('.newCriteriaWeight')
 let saveAllOptionsButton = document.querySelector('.saveAllOptionsButton')
 let calcRDbutton = document.createElement('button')
 let backToCriteriaButton = document.querySelector('.backToCriteriaButton')
-let eraseTableButton = document.createElement('button')
 let newOptionInput = document.querySelector('.newOptionInput')
 
 // Define Arrays to store values
@@ -230,17 +229,17 @@ saveAllOptionsButton.addEventListener ('click', () => {
     })
 
     // Define functionality of "Recalculate" button which clears the arrays and removes the last row from the table
-    eraseTableButton.className = "eraseTableButton"
-    eraseTableButton.textContent = "Recalculate"
-    document.querySelector('.tableDiv').appendChild(eraseTableButton)
-    eraseTableButton.addEventListener ('click', () =>{
-      optionScoreArray = []
-      inputScoreArray = []
-      if (scoringTable.contains(document.querySelector('.totalScoreRow'))) {
-        scoringTable.removeChild(document.querySelector('.totalScoreRow'))
-      }
-      document.querySelector('#finalAnswerDiv').innerHTML = ""
-    })
+    // eraseTableButton.className = "eraseTableButton"
+    // eraseTableButton.textContent = "Recalculate"
+    // document.querySelector('.tableDiv').appendChild(eraseTableButton)
+    // eraseTableButton.addEventListener ('click', () =>{
+    //   optionScoreArray = []
+    //   inputScoreArray = []
+    //   if (scoringTable.contains(document.querySelector('.totalScoreRow'))) {
+    //     scoringTable.removeChild(document.querySelector('.totalScoreRow'))
+    //   }
+    //   document.querySelector('#finalAnswerDiv').innerHTML = ""
+    // })
 
     // Define functionality of the button that takes the user back to defining the criteria and options
     backToCriteriaButton.addEventListener('click', () => {

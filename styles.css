@@ -4,6 +4,14 @@ body, html {
   background-color: inherit;
 }
 
+html {
+  background: url(rationalize-cover.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 /* INDEX PAGE STYLING */
 
 .masthead {
@@ -37,25 +45,26 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-color: rgba(255,255,255,1); */
   border-radius: 5px;
   padding: 20px;
   width: 80%;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Set the fixed height of the footer here */
+  line-height: 50px; /* Vertically center the text there */
+  /* background-color: rgba(120,110, 92, 0.5); */
+  background-color: rgba(0,0,0, 0.5);
+  /* margin-bottom: 10px; */
+}
+
 
 /* MOBILE INDEX BACKGROUND STYLING */
-@media only screen and (min-width : 380px) {
+@media only screen and (max-width : 380px) {
 	background: url(rationalize-cover-mobile.jpg) no-repeat center center fixed;
-}
-
-html {
-  background: url(rationalize-cover.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 /* DIV STYLES */
@@ -122,7 +131,6 @@ html {
   background-color: #006E90;
 }
 
-.eraseTableButton,
 .removeSavedCriteria,
 .removeSavedOptionButton {
   background-color: #d5826d;
@@ -135,7 +143,6 @@ html {
   margin-top: 1em;
 }
 
-.eraseTableButton:hover,
 .removeSavedCriteria:hover,
 .removeSavedOptionButton:hover {
   background-color: #ca6045;
@@ -147,8 +154,9 @@ html {
 }
 
 .calcRDbutton,
-.eraseTableButton {
-  width: 80%;
+.backToCriteriaButton{
+  width: 90%;
+  height: 40px;
   margin: 10px;
 
 }
@@ -161,10 +169,6 @@ h1 a:visited {
   color: black;
   text-decoration: none;
 }
-
-/* RANDOM INDIVIDUAL ELEMENTS */
-
-
 
 
 /* TABLE STYLES */
@@ -217,20 +221,17 @@ ul {
 
 @media only screen and (min-width: 768px) {
   body, html {
-    margin: 0 30px;
+    /* margin: 0 30px; */
   }
-  .calcRDbutton,
-  .eraseTableButton {
-    width: 40%;
+  .wrapper {
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   .indexContainer {
     width: 50%;
   }
 
-  /* .launchButton {
-    width: 60%;
-  } */
 }
 
 .dima {
@@ -314,3 +315,92 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+
+/* SOCIAL MEDIA ICON STYLING */
+.soc {
+  display: block;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  padding: 0.5rem;
+  text-align: center;
+  height: 40px;}
+  .soc li {
+    display: inline-block;
+    margin-left: 7px;
+    margin-left: 0.7rem;
+    margin-right: 7px;
+    margin-right: 0.7rem; 
+  }
+  .soc a, .soc svg {
+    display: block; }
+  .soc a {
+    position: relative;
+    height: 20px;
+    height: 2rem;
+    width: 20px;
+    width: 2rem; }
+  .soc svg {
+    height: 100%;
+    width: 100%; }
+
+.icon-1:hover, .icon-2:hover, .icon-3:hover, .icon-4:hover, .icon-5:hover, .icon-6:hover, .icon-7:hover, .icon-8:hover, .icon-9:hover, .icon-10:hover, .icon-11:hover, .icon-12:hover, .icon-13:hover, .icon-14:hover, .icon-15:hover, .icon-16:hover, .icon-17:hover, .icon-18:hover, .icon-19:hover, .icon-20:hover, .icon-21:hover, .icon-22:hover, .icon-23:hover, .icon-24:hover, .icon-25:hover, .icon-26:hover, .icon-27:hover, .icon-28:hover, .icon-29:hover, .icon-30:hover, .icon-31:hover {
+  border-radius: 100%;
+  color: #0e1a25;
+  fill: #0e1a25;
+  transform: scale(1.25);
+  transition: background-color .5s, transform .5s ease-out;
+}
+
+.icon-3 {
+  color: white;
+  fill: white; }
+  .icon-3:hover {
+    background: white;
+  }
+
+.icon-6 {
+  color: white;
+  fill: white; }
+  .icon-6:hover {
+    background: white; }
+
+.icon-7 {
+  color: white;
+  fill: white; }
+  .icon-7:hover {
+    background: white; }
+
+.icon-8 {
+  color: white;
+  fill: white; }
+  .icon-8:hover {
+    background: white; }
+
+
+.icon-10 {
+  color: white;
+  fill: white; }
+  .icon-10:hover {
+    background: white; }
+
+.icon-13 {
+  color: white;
+  fill: white; }
+  .icon-13:hover {
+    background: white; }
+
+
+.icon-15 {
+  color: white;
+  fill: white; }
+  .icon-15:hover {
+    background: white; }
+
+.icon-17 {
+  color: white;
+  fill: white; }
+  .icon-17:hover {
+    background: white; }
