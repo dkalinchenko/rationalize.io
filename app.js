@@ -13,6 +13,7 @@ let saveAllOptionsButton = document.querySelector('.saveAllOptionsButton')
 let calcRDbutton = document.createElement('button')
 let backToCriteriaButton = document.querySelector('.backToCriteriaButton')
 let newOptionInput = document.querySelector('.newOptionInput')
+let progressBar = document.querySelector('.progress-bar')
 
 // Define Arrays to store values
 let criteriaNameArray = [] // Contains names of all criteria the user defines
@@ -25,44 +26,40 @@ let optionScoreArray = [] // Contains the calculated scores for each object, or,
 
 // THIS SECTION DEFINES THE DECISION PROBLEM (THE FIRST SCREEN)
 newDecisionButton.addEventListener('click', () =>{
+
   if(decisionNameInput.value === ""){
     alert("Please enter the decision name before proceeding")
   } else {
+
+    //Load Criteria-selection Div
+    $(".definition").fadeOut("slow");
+    $(".criteria").delay(400).fadeIn("slow");
+
+    // Adjust the progress bar
+    progressBar.setAttribute('aria-valuenow', 25)
+    progressBar.setAttribute('style','width: 25%')
+    progressBar.innerHTML = "25%"
+
+    //Change the title to the decision name
     document.querySelector('.decisionHeader').innerHTML = decisionNameInput.value
+
     }
   })
-
-// jQuery ENABLED FADES
-$(".newDecisionButton").click(function(){
-  $(".definition").fadeOut("slow");
-  $(".criteria").delay(400).fadeIn("slow");
-})
-
-$(".saveAllCriteriaButton").click(function(){
-  $(".criteria").fadeOut("slow");
-  $(".options").delay(400).fadeIn("slow");
-})
-
-$(".saveAllOptionsButton").click(function(){
-  $(".options").fadeOut("slow");
-  $(".tableDiv").delay(400).fadeIn("slow");
-})
-
-$(".backToCriteriaButton").click(function(){
-  $(".tableDiv").fadeOut("slow");
-  $(".criteria").delay(400).fadeIn("slow");
-})
-
 
 
 // THIS SECTION DEFINES THE CRITERIA ON WHICH THE OPTIONS WILL BE EVALUATED (THE SECOND SCREEN)
 
 // Define the functionality of the 'Add a New Criteria Button'
+
+newCriteriaButton.onclick="document.getElementById('newCriteriaInput').value = ''"
 newCriteriaButton.addEventListener('click', () => {
+
   // Validate the input to be between 1 and 10
   if (newCriteriaWeight.value > 10 || newCriteriaWeight.value < 0){
     alert("Please, enter value between 0 and 10")
-    } else
+  } if (newCriteriaInput.value =='') {
+    alert("Please, define the criteria name")}
+    else
     {
     // Create a new list item and push the contents of the input into it
     let savedCriteria = document.createElement ('li')
@@ -90,8 +87,21 @@ newCriteriaButton.addEventListener('click', () => {
     let saveAllCriteriaButton = document.querySelector('.saveAllCriteriaButton')
     saveAllCriteriaButton.style.display = 'inherit'
     saveAllCriteriaButton.addEventListener('click', () => {
-    // document.querySelector('.options').style.display = 'inherit'
-    // document.querySelector('.criteria').style.display = 'none'
+
+      // Adjust the progress bar
+      progressBar.setAttribute('aria-valuenow', 50)
+      progressBar.setAttribute('style','width: 50%')
+      progressBar.innerHTML = "50%"
+
+      // Load Option definition Div
+      $(".criteria").fadeOut("slow");
+      $(".options").delay(400).fadeIn("slow");
+
+      // Clear the criteria name and weights
+      newCriteriaInput.innerHTML = ' '
+      newCriteriaWeight.value = 0
+
+
     })
   }
   })
@@ -103,6 +113,7 @@ newCriteriaButton.addEventListener('click', () => {
 
   // Define the functionality of the "Add a New Option Button" button which appends the user input to the optionsList and pushes option name into optionNameArray
   newOptionButton.addEventListener('click', () => {
+
     // Create a new list item and push the contents from the input into it
     let savedOptionliItem = document.createElement('li')
     let removeSavedOptionButton = document.createElement('button')
@@ -131,10 +142,17 @@ newCriteriaButton.addEventListener('click', () => {
 // Define the functionality of 'Save All Options' button which saves the defined criteria and options and displays it as a row in a table
 saveAllOptionsButton.addEventListener ('click', () => {
   // Reveal the table Div and append the scoring table onto it
-  // document.querySelector('.tableDiv').style.display = 'inherit'
-  // document.querySelector('.options').style.display = 'none'
   document.querySelector('.tableDiv').appendChild(scoringTable)
   scoringTable.className = 'scoringTable'
+
+  // Adjust the progress bar
+  progressBar.setAttribute('aria-valuenow', 75)
+  progressBar.setAttribute('style','width: 75%')
+  progressBar.innerHTML = "75%"
+
+  // Load the decision matrix
+  $(".options").fadeOut("slow");
+  $(".tableDiv").delay(400).fadeIn("slow");
 
   // Create the top row of the table with headings as Options
   for (let i=0; i<1; i++){
@@ -179,6 +197,11 @@ saveAllOptionsButton.addEventListener ('click', () => {
 
   // Calculate the Rational Decision
   calcRDbutton.addEventListener('click', () => {
+
+      // Adjust the progress bar
+      progressBar.setAttribute('aria-valuenow', 100)
+      progressBar.setAttribute('style','width: 100%')
+      progressBar.innerHTML = "100%"
 
       // Clear the arrays and reset the score counting for the options every for every time the calculation is ran
       for (let i=0; i<document.querySelectorAll('.totalScoreRow').length;i++){
@@ -228,21 +251,19 @@ saveAllOptionsButton.addEventListener ('click', () => {
       finalAnswerDiv.innerHTML = "<h1> Your best bet is: " + optionNameArray[highestScore] + ". Because it has scored: " + optionScoreArray[highestScore]
     })
 
-    // Define functionality of "Recalculate" button which clears the arrays and removes the last row from the table
-    // eraseTableButton.className = "eraseTableButton"
-    // eraseTableButton.textContent = "Recalculate"
-    // document.querySelector('.tableDiv').appendChild(eraseTableButton)
-    // eraseTableButton.addEventListener ('click', () =>{
-    //   optionScoreArray = []
-    //   inputScoreArray = []
-    //   if (scoringTable.contains(document.querySelector('.totalScoreRow'))) {
-    //     scoringTable.removeChild(document.querySelector('.totalScoreRow'))
-    //   }
-    //   document.querySelector('#finalAnswerDiv').innerHTML = ""
-    // })
 
     // Define functionality of the button that takes the user back to defining the criteria and options
     backToCriteriaButton.addEventListener('click', () => {
+
+      // Adjust the progress bar
+      progressBar.setAttribute('aria-valuenow', 25)
+      progressBar.setAttribute('style','width: 25%')
+      progressBar.innerHTML = "25%"
+
+      // Load criteria-selection DIV
+      $(".tableDiv").fadeOut("slow");
+      $(".criteria").delay(400).fadeIn("slow");
+
       //remove the table to be re-appended later
       scoringTable.innerHTML = ""
     })
