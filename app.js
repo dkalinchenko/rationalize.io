@@ -14,6 +14,8 @@ let calcRDbutton = document.createElement('button')
 let backToCriteriaButton = document.querySelector('.backToCriteriaButton')
 let newOptionInput = document.querySelector('.newOptionInput')
 let progressBar = document.querySelector('.progress-bar')
+let chartDiv = document.querySelector('.chart')
+
 
 // Define Arrays to store values
 let criteriaNameArray = [] // Contains names of all criteria the user defines
@@ -22,7 +24,9 @@ let optionNameArray = [] // Contains names of all the options the user defines
 let inputScore = []// Contains all the values from the scoringTable
 let inputScoreArray = [] // Contains all the weights fromt the scoringTable multipled by criteria weights
 let optionScoreArray = [] // Contains the calculated scores for each object, or, more simply, sums of columsn for the scoringTable
-
+let barChartScores = [] // Contains option scores broken out by criteria for the bar chart
+let optionChartScores = []
+let chartData = []
 
 // THIS SECTION DEFINES THE DECISION PROBLEM (THE FIRST SCREEN)
 newDecisionButton.addEventListener('click', () =>{
@@ -145,6 +149,8 @@ saveAllOptionsButton.addEventListener ('click', () => {
   document.querySelector('.tableDiv').appendChild(scoringTable)
   scoringTable.className = 'scoringTable'
 
+  chartDiv.innerHTML = ""
+
   // Adjust the progress bar
   progressBar.setAttribute('aria-valuenow', 75)
   progressBar.setAttribute('style','width: 75%')
@@ -203,7 +209,9 @@ saveAllOptionsButton.addEventListener ('click', () => {
       progressBar.setAttribute('style','width: 100%')
       progressBar.innerHTML = "100%"
 
-      // Clear the arrays and reset the score counting for the options every for every time the calculation is ran
+      chartDiv.innerHTML = ""
+
+      // Clear the arrays and reset the score counting for the options every time the calculation is ran
       for (let i=0; i<document.querySelectorAll('.totalScoreRow').length;i++){
       if (scoringTable.contains(document.querySelector('.totalScoreRow'))) {
         document.querySelectorAll('.totalScoreRow')[i].innerHTML = ''
@@ -234,9 +242,14 @@ saveAllOptionsButton.addEventListener ('click', () => {
         let objectScore = 0
         for (let b=i; b<inputScoreArray.length; b+=optionNameArray.length){ // second loop to define score of each option object
           objectScore+=inputScoreArray[b]
+          optionChartScores.push(inputScoreArray[b])
         }
         optionScoreArray.splice(i, 1, objectScore)
+        barChartScores.push(optionChartScores)
+        optionChartScores =[]
       }
+
+      // console.log(barChartScores)
 
       // Append the last row with the scores
       for (let i=0; i<optionNameArray.length; i++){
@@ -248,7 +261,85 @@ saveAllOptionsButton.addEventListener ('click', () => {
       scoringTable.appendChild(row)
       let highestScore = optionScoreArray.indexOf(Math.max(...optionScoreArray));   // Return the index of the largest number in the array of scores
       let finalAnserDiv = document.getElementById('finalAnswerDiv')
-      finalAnswerDiv.innerHTML = "<h1> Your best bet is: " + optionNameArray[highestScore] + ". Because it has scored: " + optionScoreArray[highestScore]
+      finalAnswerDiv.innerHTML = "<table><tr><th>Your best option</th><th>Score</th></tr><tr><td>" + optionNameArray[highestScore] + "</td><td>" + optionScoreArray[highestScore] + " </td><table>"
+
+
+      //Push data into an array of objects for graphical rendering
+      let chartData =[]
+      for (let i=0; i<optionNameArray.length; i++){
+          chartData.push({x:optionScoreArray[i], y:optionNameArray[i]})
+        }
+
+      // $(".scoringDirections").fadeOut("slow");
+      // $(".finalAnswerDiv").delay(900).fadeIn("slow");
+      // $(".chart").delay(900).fadeIn("slow");
+
+
+      //Render the illastrative bar chart for the answer
+
+      var outerWidth = 400;
+      var outerHeight = 250;
+      var margin = { left: 50, top: 0, right: 0, bottom: 30 };
+      var barPadding = 0.2;
+
+      var xColumn = "x";
+      var yColumn = "y";
+      var colorColumn = "y"
+
+      var innerWidth  = outerWidth  - margin.left - margin.right;
+      var innerHeight = outerHeight - margin.top  - margin.bottom;
+
+      var colorScale = d3.scale.category10();
+
+      var svg = d3.select(".chart").append("svg")
+        .attr("width",  outerWidth)
+        .attr("height", outerHeight)
+
+      var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var xAxisG = g.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + innerHeight + ")");
+
+      var yAxisG = g.append("g")
+        .attr("class", "y axis");
+
+      var xScale = d3.scale.linear().range(      [0, innerWidth]);
+      var yScale = d3.scale.ordinal().rangeBands([0, innerHeight], barPadding);
+
+      var xAxis = d3.svg.axis().scale(xScale).orient("bottom")
+        .ticks(5)                   // Use approximately 5 ticks marks.
+        .tickFormat(d3.format("s")) // Use intelligent abbreviations, e.g. 5M for 5 Million
+        .outerTickSize(0);          // Turn off the marks at the end of the axis.
+      var yAxis = d3.svg.axis().scale(yScale).orient("left")
+        .outerTickSize(0);          // Turn off the marks at the end of the axis.
+
+      function render(data){
+
+        xScale.domain([0, d3.max(data, function (d){ return d[xColumn]; })]);
+        yScale.domain(       data.map( function (d){ return d[yColumn]; }));
+
+
+        xAxisG.call(xAxis);
+        yAxisG.call(yAxis);
+
+        var bars = g.selectAll("rect").data(data);
+        bars.enter().append("rect")
+          .attr("height", yScale.rangeBand());
+        bars
+          .attr("x", 0)
+          .attr("y",     function (d){ return yScale(d[yColumn]); })
+          .attr("width", function (d){ return xScale(d[xColumn]); })
+          .attr("fill",  function (d){ return colorScale(d[colorColumn]); });
+        bars.exit().remove();
+      }
+
+      render(chartData)
+
+
+
+
     })
 
 
@@ -269,3 +360,6 @@ saveAllOptionsButton.addEventListener ('click', () => {
     })
   }
 )
+
+
+//MAKING A CHART SHOWING THE DECISION DISTIRBUTION AND CRITERIA WITHIN

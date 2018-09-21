@@ -26,6 +26,10 @@ html {
   border-bottom: .25rem solid transparent;
 }
 
+td {
+    width: 50%;
+}
+
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
   border-bottom-color: rgba(0, 0, 0, .25);
@@ -332,7 +336,7 @@ blockquote p {
     margin-left: 7px;
     margin-left: 0.7rem;
     margin-right: 7px;
-    margin-right: 0.7rem; 
+    margin-right: 0.7rem;
   }
   .soc a, .soc svg {
     display: block; }
