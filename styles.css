@@ -12,6 +12,13 @@ html {
   background-size: cover;
 }
 
+a,
+a:hover,
+a:visited,
+.btn-link {
+  color: black;
+}
+
 /* INDEX PAGE STYLING */
 
 .masthead {
@@ -110,15 +117,33 @@ td {
 .tableDiv {
   text-align:center;
 }
+
+.step4directions {
+  text-align: left;
+}
+
+.step4directions td {
+  width: 20%
+}
 /* BUTTON STYLES */
 
 .newCriteriaButton,
 .newOptionButton,
 .newDecisionButton,
 .saveAllCriteriaButton,
+.saveAllOptionsButton{
+  background-color: #6DC0D5;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+}
+
+.saveAllCriteriaButton,
 .saveAllOptionsButton,
 .calcRDbutton {
-  background-color: #6DC0D5;
+  background-color: #747C92;
   border: none;
   display: inline-block;
   width: 100%;
@@ -165,11 +190,15 @@ td {
 
 }
 
+.inputDef {
+  border-style:dashed;
+}
 /* LINK STYLES */
 
 h1 a,
 h1 a:hover,
-h1 a:visited {
+h1 a:visited,
+.card a {
   color: black;
   text-decoration: none;
 }
@@ -216,6 +245,29 @@ ul {
 .criteriaList li {
   margin-top: 5px;
   margin-left: 0;
+}
+
+
+/* .criteriaInput img
+{
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+} */
+
+.options img,
+.criteriaInput img,
+.tableDef img {
+  height: auto;
+    width: auto;
+    max-width: 70px;
+    max-height: 40px;
+}
+
+.criteriaTable td {
+  width: 25%;
+  text-align: center;
+  /* font-size: 20px; */
 }
 
 

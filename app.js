@@ -67,8 +67,8 @@ newCriteriaButton.addEventListener('click', () => {
     {
     // Create a new list item and push the contents of the input into it
     let savedCriteria = document.createElement ('li')
-    savedCriteria.className = 'savedCriteria list-group-item list-group-item-action'
-    savedCriteria.innerHTML = '<table><tr><td><b>Criteria: </td><td class="criteriaNameCell">' + newCriteriaInput.value + "</td></tr><tr><td><b>Weight: </b></td> <td class='criteriaWeightCell'>" + newCriteriaWeight.value + "</td></tr></table>"
+    savedCriteria.className = 'savedCriteria list-group-item'
+    savedCriteria.innerHTML = '<table><tr><td><b>Criteria: </td><td class="criteriaNameCell">' + newCriteriaInput.value + "</td></tr><tr><td><b>Importance: </b></td> <td class='criteriaWeightCell'>" + newCriteriaWeight.value + "</td></tr></table>"
     criteriaNameArray.push(newCriteriaInput.value)
     criteriaWeightArray.push(parseInt(newCriteriaWeight.value))
     criteriaList.appendChild(savedCriteria)
@@ -86,6 +86,9 @@ newCriteriaButton.addEventListener('click', () => {
           criteriaList.removeChild(savedCriteria)
     })
     savedCriteria.appendChild(removeSavedCriteria)
+    // Clear the criteria name and weights
+    newCriteriaInput.value = ' '
+    newCriteriaWeight.value = 0
 
     // Create and define the functionality of the 'Save All Criteria Button'
     let saveAllCriteriaButton = document.querySelector('.saveAllCriteriaButton')
@@ -101,9 +104,7 @@ newCriteriaButton.addEventListener('click', () => {
       $(".criteria").fadeOut("slow");
       $(".options").delay(400).fadeIn("slow");
 
-      // Clear the criteria name and weights
-      newCriteriaInput.innerHTML = ' '
-      newCriteriaWeight.value = 0
+
 
 
     })
@@ -136,6 +137,7 @@ newCriteriaButton.addEventListener('click', () => {
       if (index > -1) {
           optionNameArray.splice(index, 1)}
     })
+    newOptionInput.value = ' '
 
     saveAllOptionsButton.style.display = 'inherit'
 
@@ -176,7 +178,7 @@ saveAllOptionsButton.addEventListener ('click', () => {
   // Create the rest of the rows with criterias, their weights and inputs
   for (let i=0; i<criteriaNameArray.length; i++) {
       let criteriaRow = document.createElement('tr')
-      criteriaRow.textContent = criteriaNameArray[i] + " " + criteriaWeightArray[i]
+      criteriaRow.textContent = criteriaNameArray[i]
       scoringTable.appendChild(criteriaRow)
 
       for (let c=0; c<optionNameArray.length; c++){
