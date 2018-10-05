@@ -27,6 +27,7 @@ let optionScoreArray = [] // Contains the calculated scores for each object, or,
 let barChartScores = [] // Contains option scores broken out by criteria for the bar chart
 let optionChartScores = []
 let chartData = []
+let criteriaCount = 0
 
 // THIS SECTION DEFINES THE DECISION PROBLEM (THE FIRST SCREEN)
 newDecisionButton.addEventListener('click', () =>{
@@ -57,7 +58,6 @@ newDecisionButton.addEventListener('click', () =>{
 
 newCriteriaButton.onclick="document.getElementById('newCriteriaInput').value = ''"
 newCriteriaButton.addEventListener('click', () => {
-
   // Validate the input to be between 1 and 10
   if (newCriteriaWeight.value > 10 || newCriteriaWeight.value < 0){
     alert("Please, enter value between 0 and 10")
@@ -68,26 +68,28 @@ newCriteriaButton.addEventListener('click', () => {
     // Create a new list item and push the contents of the input into it
     let savedCriteria = document.createElement ('li')
     savedCriteria.className = 'savedCriteria list-group-item'
-    savedCriteria.innerHTML = '<table><tr><td><b>Criteria: </td><td class="criteriaNameCell">' + newCriteriaInput.value + "</td></tr><tr><td><b>Importance: </b></td> <td class='criteriaWeightCell'>" + newCriteriaWeight.value + "</td></tr></table>"
+    savedCriteria.innerHTML = '<table class="newCriteriaTable"><tr><td><b>Criteria: </td><td class="criteriaNameCell">' + newCriteriaInput.value + "</td></tr><tr><td><b>Importance: </b></td> <td class='criteriaWeightCell'>" + newCriteriaWeight.value + "</td></tr></table>"
     criteriaNameArray.push(newCriteriaInput.value)
     criteriaWeightArray.push(parseInt(newCriteriaWeight.value))
     criteriaList.appendChild(savedCriteria)
 
+
     // Create & define the functionality of "Remove Criteria" button
     let removeSavedCriteria = document.createElement ('button')
-    removeSavedCriteria.className = 'removeSavedCriteria'
-    removeSavedCriteria.textContent = 'Remove Criteria'
-    removeSavedCriteria.addEventListener ('click', () => {
+    removeSavedCriteria.className = 'close'
+    removeSavedCriteria.textContent = 'x'
+    removeSavedCriteria.addEventListener ('click', (e) => {
       // Nix the criteria name and weight out of their arrays
-      let index = criteriaNameArray.indexOf(newCriteriaInput.value)
+      console.log(e.target.parentNode.childNodes[1].firstChild.firstChild.childNodes[1].innerText)
+      let index = criteriaNameArray.indexOf(e.target.parentNode.childNodes[1].firstChild.firstChild.childNodes[1].innerText)
       if (index > -1) {
           criteriaNameArray.splice(index, 1)
           criteriaWeightArray.splice(index, 1)}
           criteriaList.removeChild(savedCriteria)
     })
-    savedCriteria.appendChild(removeSavedCriteria)
+    savedCriteria.insertBefore(removeSavedCriteria, savedCriteria.firstChild)
     // Clear the criteria name and weights
-    newCriteriaInput.value = ' '
+    newCriteriaInput.value = ''
     newCriteriaWeight.value = 0
 
     // Create and define the functionality of the 'Save All Criteria Button'
@@ -122,18 +124,18 @@ newCriteriaButton.addEventListener('click', () => {
     // Create a new list item and push the contents from the input into it
     let savedOptionliItem = document.createElement('li')
     let removeSavedOptionButton = document.createElement('button')
-    removeSavedOptionButton.className = "removeSavedOptionButton"
-    removeSavedOptionButton.textContent = "Remove Option"
+    removeSavedOptionButton.className = "close"
+    removeSavedOptionButton.textContent = "x"
     savedOptionliItem.className = 'list-group-item list-group-item-action'
-    savedOptionliItem.innerHTML = '<table><tr><td><b>Option:</b> </td><td class="optionNameCell">' + newOptionInput.value + "</td></tr></table>"
+    savedOptionliItem.innerHTML = '<table class="newCriteriaTable"><tr><td><b>Option:</b> </td><td class="optionNameCell">' + newOptionInput.value + "</td></tr></table>"
     optionsList.appendChild(savedOptionliItem)
-    savedOptionliItem.appendChild(removeSavedOptionButton)
+    savedOptionliItem.insertBefore(removeSavedOptionButton, savedOptionliItem.firstChild)
     optionNameArray.push(newOptionInput.value)
 
     // Create and define functionality of 'Remove option button'
-    removeSavedOptionButton.addEventListener ('click', () => {
+    removeSavedOptionButton.addEventListener ('click', (e) => {
       optionsList.removeChild(savedOptionliItem) // Remove the UI element
-      let index = optionNameArray.indexOf(newOptionInput.value) // Nix the value out of the array
+      let index = optionNameArray.indexOf(e.target.parentNode.childNodes[1].firstChild.firstChild.childNodes[1].innerText) // Nix the value out of the array
       if (index > -1) {
           optionNameArray.splice(index, 1)}
     })
