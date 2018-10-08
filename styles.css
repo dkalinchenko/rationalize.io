@@ -19,12 +19,18 @@ a:visited,
   color: black;
 }
 
+
 .close {
   float:right;
 }
 
 .newCriteriaTable {
   width: 80%;
+}
+
+.breadcrumbs {
+  font-size: 0.7em;
+  text-align: center;
 }
 
 
