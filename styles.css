@@ -85,6 +85,7 @@ td {
   color: white;
 }
 
+
 .launchButton {
   margin-top: 20px;
   background-color: rgb(180, 77, 77);
@@ -104,12 +105,6 @@ td {
   line-height: 50px; /* Vertically center the text there */
   background-color: rgba(0,0,0, 0.5);
 }
-
-
-/* MOBILE INDEX BACKGROUND STYLING */
-/* @media only screen and (max-width : 380px) {
-	background: url(rationalize-cover-mobile.jpg) no-repeat center center fixed;
-} */
 
 /* DIV STYLES */
 
@@ -165,7 +160,7 @@ td {
 .newDecisionButton,
 .saveAllCriteriaButton,
 .saveAllOptionsButton{
-  background-color: #6DC0D5;
+  background-color: rgb(180, 77, 77);
   border: none;
   display: inline-block;
   width: 100%;
@@ -173,10 +168,8 @@ td {
   color: white;
 }
 
-.saveAllCriteriaButton,
-.saveAllOptionsButton,
 .calcRDbutton {
-  background-color: #747C92;
+  background-color: rgb(180, 77, 77);
   border: none;
   display: inline-block;
   width: 100%;
@@ -190,20 +183,9 @@ td {
 .saveAllCriteriaButton:hover,
 .saveAllOptionsButton:hover,
 .calcRDbutton:hover {
-  background-color: #006E90;
+  background-color: rgb(202, 92, 92);
 }
 
-.removeSavedCriteria,
-.removeSavedOptionButton {
-  background-color: #d5826d;
-  border: none;
-  display: inline-block;
-  width: 100%;
-  border-radius: 5px;
-  color: white;
-  font-size: 15px;
-  margin-top: 1em;
-}
 
 .removeSavedCriteria:hover,
 .removeSavedOptionButton:hover {
@@ -305,8 +287,10 @@ ul {
     /* margin: 0 30px; */
   }
   .wrapper {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
   .indexContainer {
