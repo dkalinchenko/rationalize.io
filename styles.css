@@ -66,14 +66,34 @@ td {
   border-bottom-color: #000;
 }
 
-.indexContainer{
+.lead {
+  /* font-size: 2em; */
+  margin-top: -10px;
+  margin-bottom: 0px;
+}
+.headerContainer {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 5px;
-  padding: 20px;
-  width: 80%;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.headerContainer a {
+  color: white;
+}
+
+.launchButton {
+  margin-top: 20px;
+  background-color: rgb(180, 77, 77);
+  border: none;
+}
+
+.launchButton:hover {
+  background-color: rgb(202, 92, 92);
+
 }
 
 .footer {
@@ -82,16 +102,14 @@ td {
   width: 100%;
   height: 50px; /* Set the fixed height of the footer here */
   line-height: 50px; /* Vertically center the text there */
-  /* background-color: rgba(120,110, 92, 0.5); */
   background-color: rgba(0,0,0, 0.5);
-  /* margin-bottom: 10px; */
 }
 
 
 /* MOBILE INDEX BACKGROUND STYLING */
-@media only screen and (max-width : 380px) {
+/* @media only screen and (max-width : 380px) {
 	background: url(rationalize-cover-mobile.jpg) no-repeat center center fixed;
-}
+} */
 
 /* DIV STYLES */
 
@@ -261,14 +279,6 @@ ul {
   margin-top: 5px;
   margin-left: 0;
 }
-
-
-/* .criteriaInput img
-{
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-} */
 
 .options img,
 .criteriaInput img,
