@@ -38,6 +38,7 @@ a:visited,
 
 .masthead {
   margin-bottom: 2rem;
+  margin-top: -16px;
 }
 
 .nav-masthead .nav-link {
@@ -284,13 +285,11 @@ ul {
 
 @media only screen and (min-width: 826px) {
   body, html {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
   .wrapper {
     width: 826px;
-    /* margin-top: 16px;
-    margin-bottom: 16px; */
     border-radius: 5px;
   }
 
