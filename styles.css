@@ -17,6 +17,7 @@ a:hover,
 a:visited,
 .btn-link {
   color: black;
+  font-weight: bold;
 }
 
 
