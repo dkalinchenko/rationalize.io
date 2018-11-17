@@ -155,28 +155,36 @@ td {
 .step4directions td {
   width: 20%
 }
+
+.innerHeader {
+  color: gray;
+}
 /* BUTTON STYLES */
 
 .newCriteriaButton,
-.newOptionButton,
-.newDecisionButton,
-.saveAllCriteriaButton,
-.saveAllOptionsButton{
-  background-color: rgb(180, 77, 77);
+.newOptionButton
+{ background-color: rgb(180, 77, 77);
   border: none;
   display: inline-block;
   width: 100%;
   border-radius: 5px;
   color: white;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
-.calcRDbutton {
+.newDecisionButton,
+.saveAllCriteriaButton,
+.saveAllOptionsButton,
+.calcRDbutton{
   background-color: rgb(180, 77, 77);
   border: none;
-  display: inline-block;
-  width: 100%;
+  width: 200px;
+  height: 40px;
   border-radius: 5px;
   color: white;
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
 .newCriteriaButton:hover,
@@ -188,24 +196,20 @@ td {
   background-color: rgb(202, 92, 92);
 }
 
-
-.removeSavedCriteria:hover,
-.removeSavedOptionButton:hover {
-  background-color: #ca6045;
-}
-
-.saveAllCriteriaButton,
-.saveAllOptionsButton {
-  display: none;
-}
-
-.calcRDbutton,
-.backToCriteriaButton{
-  width: 90%;
+.backButton {
+  background-color: #FFF6F5;
+  border: none;
+  width: 200px;
   height: 40px;
-  margin: 10px;
-
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
+
+.backButton:hover {
+  background-color: #F3EED9;
+}
+
 
 .inputDef {
   border-style:dashed;
@@ -273,11 +277,16 @@ ul {
     max-height: 40px;
 }
 
-.criteriaTable td {
+.criteriaTable td,
+.steps td  {
   width: 25%;
   text-align: center;
-  /* font-size: 20px; */
 }
+
+.steps td img {
+  width: 30px;
+}
+
 
 
 
@@ -292,10 +301,29 @@ ul {
   .wrapper {
     width: 826px;
     border-radius: 5px;
+    position: relative;
   }
 
   .indexContainer {
     width: 50%;
+  }
+
+  .content {
+    padding-bottom: 80px;
+  }
+
+  .navDiv {
+    position: fixed;
+    bottom: 0px;
+    background-color: #3D4D6C;
+    width: 826px;
+    height: 60px;
+    margin-left: -20px;
+    margin-right: -20px;
+    text-align: right;
+    margin-bottom: 16px;
+    border-radius: 0px 0px 5px 5px;
+    z-index: 1;
   }
 
 }
@@ -311,6 +339,14 @@ ul {
 
 .rHeader {
   font-size: 2em;
+}
+
+.newDecisionButton,
+.saveAllCriteriaButton,
+.saveAllOptionsButton,
+.calcRDbutton,
+.backButton {
+  width: 40%;
 }
 }
 
@@ -470,3 +506,5 @@ blockquote p {
   fill: white; }
   .icon-17:hover {
     background: white; }
+
+/* Step by Step Nav Sytling */

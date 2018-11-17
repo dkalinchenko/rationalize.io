@@ -10,8 +10,10 @@ let decisionNameInput = document.querySelector('.decisionNameInput')
 let newCriteriaInput = document.querySelector('.newCriteriaInput')
 let newCriteriaWeight = document.querySelector('.newCriteriaWeight')
 let saveAllOptionsButton = document.querySelector('.saveAllOptionsButton')
-let calcRDbutton = document.createElement('button')
-let backToCriteriaButton = document.querySelector('.backToCriteriaButton')
+let calcRDbutton = document.querySelector('.calcRDbutton')
+let backToCriteria = document.querySelector('.backToCriteria')
+let backToOptions = document.querySelector('.backToOptions')
+let backToName = document.querySelector('.backToName')
 let newOptionInput = document.querySelector('.newOptionInput')
 let progressBar = document.querySelector('.progress-bar')
 let chartDiv = document.querySelector('.chart')
@@ -29,7 +31,9 @@ let optionChartScores = []
 let chartData = []
 let criteriaCount = 0
 
-// THIS SECTION DEFINES THE DECISION PROBLEM (THE FIRST SCREEN)
+
+//DEFINE THE FUNCTIONALITY OF 'CONTINUE' AND 'BACK' BUTTONS
+// Define functionality of the button that takes the user back to defining the criteria and options
 newDecisionButton.addEventListener('click', () => {
 
   if (decisionNameInput.value === "") {
@@ -41,15 +45,59 @@ newDecisionButton.addEventListener('click', () => {
     $(".criteria").delay(400).fadeIn("slow");
 
     // Adjust the progress bar
-    progressBar.setAttribute('aria-valuenow', 25)
-    progressBar.setAttribute('style', 'width: 25%')
-    progressBar.innerHTML = "25%"
+    // progressBar.setAttribute('aria-valuenow', 25)
+    // progressBar.setAttribute('style', 'width: 25%')
+    // progressBar.innerHTML = "25%"
 
     //Change the title to the decision name
     document.querySelector('.decisionHeader').innerHTML = decisionNameInput.value
 
   }
 })
+
+backToName.addEventListener('click', () => {
+
+  // Adjust the progress bar
+  // progressBar.setAttribute('aria-valuenow', 0)
+  // progressBar.setAttribute('style', 'width: 0%')
+  // progressBar.innerHTML = "0%"
+
+  // Load criteria-selection DIV
+  $(".criteria").fadeOut("slow");
+  $(".definition").delay(400).fadeIn("slow");
+
+})
+
+backToCriteria.addEventListener('click', () => {
+
+  // Adjust the progress bar
+  // progressBar.setAttribute('aria-valuenow', 25)
+  // progressBar.setAttribute('style', 'width: 25%')
+  // progressBar.innerHTML = "25%"
+
+  // Load criteria-selection DIV
+  $(".options").fadeOut("slow");
+  $(".criteria").delay(400).fadeIn("slow");
+
+})
+
+backToOptions.addEventListener('click', () => {
+
+  // Adjust the progress bar
+  // progressBar.setAttribute('aria-valuenow', 50)
+  // progressBar.setAttribute('style', 'width: 50%')
+  // progressBar.innerHTML = "50%"
+
+  // Load criteria-selection DIV
+  $(".tableDiv").fadeOut("slow");
+  $(".options").delay(400).fadeIn("slow");
+
+  //remove the table to be re-appended later
+  scoringTable.innerHTML = ""
+})
+
+// THIS SECTION DEFINES THE DECISION PROBLEM (THE FIRST SCREEN)
+
 
 
 // THIS SECTION DEFINES THE CRITERIA ON WHICH THE OPTIONS WILL BE EVALUATED (THE SECOND SCREEN)
@@ -75,6 +123,8 @@ newCriteriaButton.addEventListener('click', () => {
     let removeSavedCriteria = document.createElement('button')
     removeSavedCriteria.className = 'close'
     removeSavedCriteria.textContent = 'x'
+    removeSavedCriteria.setAttribute("type", "button")
+    removeSavedCriteria.setAttribute("aria-label", "Close")
     removeSavedCriteria.addEventListener('click', (e) => {
 
       // Nix the criteria name and weight out of their arrays
@@ -92,17 +142,25 @@ newCriteriaButton.addEventListener('click', () => {
 
     // Create and define the functionality of the 'Save All Criteria Button'
     let saveAllCriteriaButton = document.querySelector('.saveAllCriteriaButton')
-    saveAllCriteriaButton.style.display = 'inherit'
     saveAllCriteriaButton.addEventListener('click', () => {
 
-      // Adjust the progress bar
-      progressBar.setAttribute('aria-valuenow', 50)
-      progressBar.setAttribute('style', 'width: 50%')
-      progressBar.innerHTML = "50%"
 
-      // Load Option definition Div
-      $(".criteria").fadeOut("slow");
-      $(".options").delay(400).fadeIn("slow");
+
+      if (criteriaNameArray.length < 2)
+      {
+        alert('Please, enter at least 2 criteria before proceeding')
+      } else {
+        // Adjust the progress bar
+        // progressBar.setAttribute('aria-valuenow', 50)
+        // progressBar.setAttribute('style', 'width: 50%')
+        // progressBar.innerHTML = "50%"
+
+        // Load Option definition Div
+        $(".criteria").fadeOut("slow");
+        $(".options").delay(400).fadeIn("slow");
+      }
+
+
     })
   }
 })
@@ -132,21 +190,29 @@ newOptionButton.addEventListener('click', () => {
     }
   })
   newOptionInput.value = ' '
-  saveAllOptionsButton.style.display = 'inherit'
+  // saveAllOptionsButton.style.display = 'inherit'
 })
 
 // THIS SECTION DEFINES THE FUNCTIONALITY OF THE LAST SCREEN WITH THE SCORING TABLE WHICH CALCULATES THE DECISION
 // Define the functionality of 'Save All Options' button which saves the defined criteria and options and displays it as a row in a table
 saveAllOptionsButton.addEventListener('click', () => {
+
+  if (optionNameArray.length < 2)
+  {
+    alert('Please, enter at least 2 options before proceeding')
+  } else {
+
+
+
   // Reveal the table Div and append the scoring table onto it
   document.querySelector('.tableDiv').appendChild(scoringTable)
   scoringTable.className = 'scoringTable'
   chartDiv.innerHTML = ""
 
   // Adjust the progress bar
-  progressBar.setAttribute('aria-valuenow', 75)
-  progressBar.setAttribute('style', 'width: 75%')
-  progressBar.innerHTML = "75%"
+  // progressBar.setAttribute('aria-valuenow', 75)
+  // progressBar.setAttribute('style', 'width: 75%')
+  // progressBar.innerHTML = "75%"
 
   // Load the decision matrix
   $(".options").fadeOut("slow");
@@ -182,19 +248,19 @@ saveAllOptionsButton.addEventListener('click', () => {
   }
 
   // Create Save button for the table
-  calcRDbutton.className = "calcRDbutton"
+  // calcRDbutton.className = "calcRDbutton"
   calcRDbutton.setAttribute('data-toggle', 'modal')
   calcRDbutton.setAttribute('data-target', '#finalAnswer')
-  calcRDbutton.textContent = 'Calculate the Rational Option'
-  document.querySelector('.tableDiv').appendChild(calcRDbutton)
+  // calcRDbutton.textContent = 'Calculate the Rational Option'
+  // document.querySelector('.tableDiv').appendChild(calcRDbutton)
 
   // Calculate the Rational Decision
   calcRDbutton.addEventListener('click', () => {
 
     // Adjust the progress bar
-    progressBar.setAttribute('aria-valuenow', 100)
-    progressBar.setAttribute('style', 'width: 100%')
-    progressBar.innerHTML = "100%"
+    // progressBar.setAttribute('aria-valuenow', 100)
+    // progressBar.setAttribute('style', 'width: 100%')
+    // progressBar.innerHTML = "100%"
     chartDiv.innerHTML = ""
 
     // Clear the arrays and reset the score counting for the options every time the calculation is ran
@@ -337,22 +403,5 @@ saveAllOptionsButton.addEventListener('click', () => {
   })
 
 
-  // Define functionality of the button that takes the user back to defining the criteria and options
-  backToCriteriaButton.addEventListener('click', () => {
 
-    // Adjust the progress bar
-    progressBar.setAttribute('aria-valuenow', 25)
-    progressBar.setAttribute('style', 'width: 25%')
-    progressBar.innerHTML = "25%"
-
-    // Load criteria-selection DIV
-    $(".tableDiv").fadeOut("slow");
-    $(".criteria").delay(400).fadeIn("slow");
-
-    //remove the table to be re-appended later
-    scoringTable.innerHTML = ""
-  })
-})
-
-
-//MAKING A CHART SHOWING THE DECISION DISTIRBUTION AND CRITERIA WITHIN
+}})
