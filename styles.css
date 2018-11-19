@@ -214,6 +214,7 @@ td {
 .inputDef {
   border-style:dashed;
 }
+
 /* LINK STYLES */
 
 h1 a,
@@ -268,6 +269,8 @@ ul {
   margin-left: 0;
 }
 
+/* Other Elements */
+
 .options img,
 .criteriaInput img,
 .tableDef img {
@@ -287,9 +290,11 @@ ul {
   width: 30px;
 }
 
-
-
-
+.decisionHeader {
+  color: #3D4D6C;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 /* MARGIN ADJUST FOR A LARGER SCREEN (OTHER RESPONSIVE FEATURES ARE MADE VIA BOOTSTRAP) */
 
