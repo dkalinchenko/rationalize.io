@@ -113,7 +113,7 @@ td {
 .wrapper {
   position:relative;
   height: 100%;
-  overflow-y:scroll;
+/*   overflow-y:scroll; */
   background-color: rgba(255,255,255, 1);
   padding-left: 20px;
   padding-right: 20px;
@@ -140,7 +140,7 @@ td {
 
 .optionsOutput,
 .criteriaOutput {
-  overflow: scroll;
+/*   overflow: scroll; */
   height: 100%;
 }
 
