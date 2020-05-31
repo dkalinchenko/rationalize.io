@@ -35,6 +35,7 @@ let criteriaCount = 0
 //DEFINE THE FUNCTIONALITY OF 'CONTINUE' AND 'BACK' BUTTONS
 // Define functionality of the button that takes the user back to defining the criteria and options
 newDecisionButton.addEventListener('click', () => {
+  ga('send', 'event', 'input', 'click', 'Decision Name');
 
   if (decisionNameInput.value === "") {
     alert("Please enter the decision name before proceeding")
