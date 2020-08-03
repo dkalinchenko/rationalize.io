@@ -2,390 +2,87 @@ body, html {
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   height: 100%;
   background-color: inherit;
+
 }
 
 html {
-  background: url(rationalize-cover.jpg) no-repeat center center fixed;
+  background: url(img/rationalize-cover.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
+
+body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
 
 a,
 a:hover,
-a:visited,
-.btn-link {
-  color: black;
+a:visited{
+  color: #5b9bd5;
   font-weight: bold;
 }
 
-
-.close {
-  float:right;
+.logo {
+  width: 200px;
+  margin-left: 200px;
 }
 
-.newCriteriaTable {
+.hello {
+  margin: auto;
+  margin-left: 200px;
   width: 80%;
+  height: 30%;
+  margin-top: 15%;
 }
 
-.breadcrumbs {
-  font-size: 0.7em;
-  text-align: center;
+.icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-
-/* INDEX PAGE STYLING */
-
-.masthead {
-  margin-bottom: 2rem;
-  margin-top: -16px;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(0, 0, 0, .25);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-td {
-    width: 50%;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(0, 0, 0, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #000;
-  border-bottom-color: #000;
-}
-
-.lead {
-  /* font-size: 2em; */
-  margin-top: -10px;
-  margin-bottom: 0px;
-}
-.headerContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-}
-
-.headerContainer a {
-  color: white;
-}
-
-
-.launchButton {
-  margin-top: 20px;
-  background-color: rgb(180, 77, 77);
+.btn{
+  background-color: #5b9bd5;
   border: none;
 }
 
-.launchButton:hover {
-  background-color: rgb(202, 92, 92);
+.btn:hover {
+  background-color: #498dcb;
+}
 
+.dima {
+  width: 150px;
+  float: left;
+  padding-right: 10px;
 }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50px; /* Set the fixed height of the footer here */
-  line-height: 50px; /* Vertically center the text there */
+  line-height: 30px; /* Vertically center the text there */
   background-color: rgba(0,0,0, 0.5);
-}
-
-/* DIV STYLES */
-
-.wrapper {
-  position:relative;
-  height: 100%;
-  overflow-y:scroll;
-  background-color: rgba(255,255,255, 1);
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.tableDef {
-  padding-left: 15px;
-  padding-right: 15px;
-  }
-
-.criteria,
-.options {
-  height: 400px;
-}
-
-.criteria,
-.options,
-.tableDiv,
-.saveCriteriaListButton {
-  display: none;
-}
-
-.optionsOutput,
-.criteriaOutput {
-/*   overflow: scroll; */
-  height: 100%;
-}
-
-.tableDiv {
-  text-align:center;
-}
-
-.step4directions {
-  text-align: left;
-}
-
-.step4directions td {
-  width: 20%
-}
-
-.innerHeader {
-  color: gray;
-}
-/* BUTTON STYLES */
-
-.newCriteriaButton,
-.newOptionButton
-{ background-color: rgb(180, 77, 77);
-  border: none;
-  display: inline-block;
-  width: 100%;
-  border-radius: 5px;
   color: white;
-  margin-top: 10px;
-  margin-right: 10px;
-}
-
-.newDecisionButton,
-.saveAllCriteriaButton,
-.saveAllOptionsButton,
-.calcRDbutton{
-  background-color: rgb(180, 77, 77);
-  border: none;
-  width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  color: white;
-  margin-top: 10px;
-  margin-right: 20px;
-}
-
-.newCriteriaButton:hover,
-.newOptionButton:hover,
-.newDecisionButton:hover,
-.saveAllCriteriaButton:hover,
-.saveAllOptionsButton:hover,
-.calcRDbutton:hover {
-  background-color: rgb(202, 92, 92);
-}
-
-.backButton {
-  background-color: #FFF6F5;
-  border: none;
-  width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-right: 10px;
-}
-
-.backButton:hover {
-  background-color: #F3EED9;
-}
-
-
-.inputDef {
-  border-style:dashed;
-}
-
-/* LINK STYLES */
-
-h1 a,
-h1 a:hover,
-h1 a:visited,
-.card a {
-  color: black;
-  text-decoration: none;
-}
-
-
-/* TABLE STYLES */
-
-.scoringTable td {
-  width: auto;
-}
-
-.cell{
-  width: 100%;
-  border: 1px solid #ccc;
-
-}
-
-table {
-  width: 100%;
-}
-
-table td input {
-  width: 100%;
-}
-
-/* LIST STYLES */
-
-.newCriteriaList,
-.optionAddList,
-.optionsList,
-.criteriaList {
-  list-style: none;
-  margin: 0 auto;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-.newCriteriaList li,
-.optionAddList li,
-.optionsList li,
-.criteriaList li {
-  margin-top: 5px;
-  margin-left: 0;
-}
-
-/* Other Elements */
-
-.options img,
-.criteriaInput img,
-.tableDef img {
-  height: auto;
-    width: auto;
-    max-width: 70px;
-    max-height: 40px;
-}
-
-.criteriaTable td,
-.steps td  {
-  width: 25%;
   text-align: center;
-}
-
-.steps td img {
-  width: 30px;
-}
-
-.decisionHeader {
-  color: #3D4D6C;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-/* MARGIN ADJUST FOR A LARGER SCREEN (OTHER RESPONSIVE FEATURES ARE MADE VIA BOOTSTRAP) */
-
-@media only screen and (min-width: 826px) {
-  body, html {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  .wrapper {
-    width: 826px;
-    border-radius: 5px;
-    position: relative;
-  }
-
-  .indexContainer {
-    width: 50%;
-  }
-
-  .content {
-    padding-bottom: 80px;
-  }
-
-  .navDiv {
-    position: fixed;
-    bottom: 0px;
-    background-color: #3D4D6C;
-    width: 826px;
-    height: 60px;
-    margin-left: -20px;
-    margin-right: -20px;
-    text-align: right;
-    margin-bottom: 16px;
-    border-radius: 0px 0px 5px 5px;
-    z-index: 1;
-  }
+  font-size: 12px;
 
 }
 
-.dima {
-  width: 40%;
-  height: 40%;
-  float: left;
-  padding-right: 10px;
-}
 
-@media only screen and (max-width: 420px) {
-
-.rHeader {
-  font-size: 2em;
-}
-
-.newDecisionButton,
-.saveAllCriteriaButton,
-.saveAllOptionsButton,
-.calcRDbutton,
-.backButton {
-  width: 40%;
-}
-}
-
-/* Font Definitions */
-
-h1 {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 2em;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-}
-
-h2 {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 2em;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 900;
-}
-
-h3 {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 1em;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 900;
-}
-p {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-}
+/* Quote Syling */
 
 blockquote {
 	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -395,15 +92,6 @@ blockquote {
 	font-weight: 400;
 	line-height: 30px;
 }
-pre {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-	font-size: 13px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 18.5714px;
-}
-
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
@@ -423,93 +111,35 @@ blockquote p {
   display: inline;
 }
 
+/* Mobile Screen Adjustment */
 
-/* SOCIAL MEDIA ICON STYLING */
-.soc {
-  display: block;
-  font-size: 0;
-  list-style: none;
-  margin: 0;
-  padding: 5px;
-  padding: 0.5rem;
-  text-align: center;
-  height: 40px;}
-  .soc li {
-    display: inline-block;
-    margin-left: 7px;
-    margin-left: 0.7rem;
-    margin-right: 7px;
-    margin-right: 0.7rem;
+@media only screen and (max-width: 680px) {
+  .logo
+{
+    margin-left: 10px;
   }
-  .soc a, .soc svg {
-    display: block; }
-  .soc a {
-    position: relative;
-    height: 20px;
-    height: 2rem;
-    width: 20px;
-    width: 2rem; }
-  .soc svg {
-    height: 100%;
-    width: 100%; }
 
-.icon-1:hover, .icon-2:hover, .icon-3:hover, .icon-4:hover, .icon-5:hover, .icon-6:hover, .icon-7:hover, .icon-8:hover, .icon-9:hover, .icon-10:hover, .icon-11:hover, .icon-12:hover, .icon-13:hover, .icon-14:hover, .icon-15:hover, .icon-16:hover, .icon-17:hover, .icon-18:hover, .icon-19:hover, .icon-20:hover, .icon-21:hover, .icon-22:hover, .icon-23:hover, .icon-24:hover, .icon-25:hover, .icon-26:hover, .icon-27:hover, .icon-28:hover, .icon-29:hover, .icon-30:hover, .icon-31:hover {
-  border-radius: 100%;
-  color: #0e1a25;
-  fill: #0e1a25;
-  transform: scale(1.25);
-  transition: background-color .5s, transform .5s ease-out;
+  .hello {
+        margin-top: 30%;
+        margin-left: 0px;
+        text-align: center;
+        width: 100%;
+  }
+  .btn {
+    position: absolute;
+  left: 50%;
+  margin-left: -80px;
+
+  }
+  .display-4 {
+        font-size: 2em;
+  }
 }
 
-.icon-3 {
-  color: white;
-  fill: white; }
-  .icon-3:hover {
-    background: white;
+
+@media only screen and (max-width: 860px) and (min-width: 680px){
+  .logo, .hello
+{
+    margin-left: 50px;
   }
-
-.icon-6 {
-  color: white;
-  fill: white; }
-  .icon-6:hover {
-    background: white; }
-
-.icon-7 {
-  color: white;
-  fill: white; }
-  .icon-7:hover {
-    background: white; }
-
-.icon-8 {
-  color: white;
-  fill: white; }
-  .icon-8:hover {
-    background: white; }
-
-
-.icon-10 {
-  color: white;
-  fill: white; }
-  .icon-10:hover {
-    background: white; }
-
-.icon-13 {
-  color: white;
-  fill: white; }
-  .icon-13:hover {
-    background: white; }
-
-
-.icon-15 {
-  color: white;
-  fill: white; }
-  .icon-15:hover {
-    background: white; }
-
-.icon-17 {
-  color: white;
-  fill: white; }
-  .icon-17:hover {
-    background: white; }
-
-/* Step by Step Nav Sytling */
+}
